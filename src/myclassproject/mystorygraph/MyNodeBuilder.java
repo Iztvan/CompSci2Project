@@ -40,7 +40,7 @@ public class MyNodeBuilder extends NodeBuilder {
 	public void ideasActions() {
 		var node = get(NodeLabels.ideas.toString());
 		node.add(new NarrationSequence("You are very desperate for bread so you turn to Baby Gronk who has an idea.")).add(new Face(player, babyGronk))
-		.add(new DialogSequence(babyGronk, player, List.of("We should go scam some old people who don't know anything about the internet"), List.of("Let's do it.", "Room temperature IQ, I swear.")));
+		.add(new DialogSequence(babyGronk, player, List.of("We should go scam some old people who don't know anything about the internet."), List.of("Let's do it.", "Room temperature IQ, I swear.")));
 		
 	}
 	// the narrator speaks again
@@ -48,7 +48,7 @@ public class MyNodeBuilder extends NodeBuilder {
 	public void suggestionsActions() {
 		var node = get(NodeLabels.suggestions.toString());
 		node.add(new NarrationSequence("No gang is successful if they have no motion. You, as the group leader, make every single decision for the gang and they reply to your every command. You are starving for clout so you consider faking like you actually care about your community and record a video of you guys helping people out or take out your bordem on some innocent person trying to meet ends met You decide to let the group have a say in a decision, for once."))
-		.add(new DialogSequence(player, manMan, List.of("We should put this pent up energy towards something positive like feeding the homeless."), List.of("what a lovely idea Manman.", "What about you johnJohn?")))
+		.add(new DialogSequence(player, manMan, List.of("We should put this pent up energy towards something positive like feeding the homeless."), List.of("What a lovely idea ManMan.", "What about you JohnJohn?")))
 		.add(new DialogSequence(player, johnJohn, List.of("We just target bully someone trying to work their food service shift."), List.of("I like the way you think JohnJohn.", "There's nothing going on in those heads of yours.")));
 	}
 
@@ -86,6 +86,13 @@ public class MyNodeBuilder extends NodeBuilder {
 		var node = get(NodeLabels.bully.toString());
 		node.add(new NarrationSequence("JohnJohn takes you and your group to a waffle house (bad idea) and start trying to cause commotion")).add(new DialogSequence(player, johnJohn, List.of("Rev up those fryers!")));
 	}
+
+	@BuilderMethod
+	public void consequencesActions() {
+		var node = get(NodeLabels.consequences.toString());
+		node.add(new NarrationSequence("The cashier at the waffle house is not having it and they immediately jump you, Baby Gronk, ManMan, and even womp who was dragged inside, they put a mask on you and your gang and yell at someone to bring out the galaxy gas."));
+	}
+	
 	
 
 
