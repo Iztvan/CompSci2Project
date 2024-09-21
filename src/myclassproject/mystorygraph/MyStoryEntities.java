@@ -18,7 +18,7 @@ public final class MyStoryEntities {
 	public static final Characters gilbert = new Characters("Gilbert", BodyTypes.H, Clothing.Begger, HairStyle.Mage_full, Colors.Black, 6);
 	public static final Characters johnJohn = new Characters("JohnJohn", BodyTypes.B, Clothing.Bandit, HairStyle.Bald, Colors.Black, 6);
 	public static final Characters womp = new Characters("Womp", BodyTypes.A, Clothing.Witch, HairStyle.Bald, Colors.Red, 6);
-	public static final Characters babyGronk = new Characters("BabyGronk", BodyTypes.D, Clothing.Naked, HairStyle.Spikey, Colors.Black, 6);
+	public static final Characters babyGronk = new Characters("Baby Gronk", BodyTypes.D, Clothing.Naked, HairStyle.Spikey, Colors.Black, 6);
 	public static final Characters Cashier = new Characters("Cashier", BodyTypes.C, Clothing.Peasant, HairStyle.Short, Colors.Black, 6);
 
 	//Our items
@@ -30,5 +30,6 @@ public final class MyStoryEntities {
 	//Our places
 	public static final Place village = new Place("Village", ItemTypes.City);
 	public static final Place alley = new Place("Alley", ItemTypes.City);
+	public static final Place waffleHouse = new Place("Waffle House", ItemTypes.Tavern);
 
 }

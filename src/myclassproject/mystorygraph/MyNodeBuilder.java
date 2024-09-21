@@ -5,6 +5,8 @@ import static myclassproject.mystorygraph.MyStoryEntities.*;
 import java.util.List;
 import com.storygraph.*;
 import com.storygraph.DialogSequence; // Add missing import statement
+import myclassproject.questexample.NodeLabels;
+import myclassproject.mystorygraph.DialogSequence; // Add missing import statement
 
 public class MyNodeBuilder extends NodeBuilder {
 	public MyNodeBuilder(List<Node> list) {
@@ -22,9 +24,9 @@ public class MyNodeBuilder extends NodeBuilder {
 		var root = get(NodeLabels.root.toString());
 		root.add(new CreateAll(List.of(alley, circleChain, ale, honeyBun, village))).add(new CreateCharacterSequence(player))
 				.add(new CreateCharacterSequence(manMan)).add(new CreateCharacterSequence(babyGronk)).add(new CreateCharacterSequence(womp))
-				.add(new CreateCharacterSequence(johnJohn)).add(new CreateCharacterSequence(gilbert))
+				.add(new CreateCharacterSequence(johnJohn)).add(new CreateCharacterSequence(gilbert)).add(new CreateCharacterSequence(cashier))
 				.add(new SetPosition(player, village, "Center")).add(new SetPosition(babyGronk, village)).add(new SetPosition(manMan, village))
-				.add(new SetPosition(johnJohn, village)).add(new SetPosition(womp, village)).add(new SetPosition(gilbert, alley))
+				.add(new SetPosition(johnJohn, village)).add(new SetPosition(womp, village)).add(new SetPosition(gilbert, alley)).add(new SetPosition(cashier, waffleHouse))
 				.add(new Face(player, womp)).add(new SetCameraFocus(player)).add(new ShowMenu());
 	}
 		
@@ -48,7 +50,7 @@ public class MyNodeBuilder extends NodeBuilder {
 	public void suggestionsActions() {
 		var node = get(NodeLabels.suggestions.toString());
 		node.add(new NarrationSequence("No gang is successful if they have no motion. You, as the group leader, make every single decision for the gang and they reply to your every command. You are starving for clout so you consider faking like you actually care about your community and record a video of you guys helping people out or take out your bordem on some innocent person trying to meet ends met You decide to let the group have a say in a decision, for once."))
-		.add(new DialogSequence(player, manMan, List.of("We should put this pent up energy towards something positive like feeding the homeless."), List.of("What a lovely idea ManMan.", "What about you JohnJohn?")))
+		.add(new DialogSequence(manMan, player, List.of("We should put this pent up energy towards something positive like feeding the homeless."), List.of("What a lovely idea ManMan.", "What about you JohnJohn?")))
 		.add(new DialogSequence(player, johnJohn, List.of("We just target bully someone trying to work their food service shift."), List.of("I like the way you think JohnJohn.", "There's nothing going on in those heads of yours.")));
 	}
 
@@ -76,9 +78,9 @@ public class MyNodeBuilder extends NodeBuilder {
 	@BuilderMethod
 	public void eatActions() {
 		var node = get(NodeLabels.eat.toString());
-		node.add(new DialogSequence(player, manMan, List.of("who said anything about eating")))
+		node.add(new DialogSequence(player, manMan, List.of("Who said anything about eating")))
 		.add(new Draw(player, galaxyGas))
-		.add(new NarrationSequence("you take a hit of your galaxy gas"));
+		.add(new NarrationSequence("You take a hit of your galaxy gas"));
 	}
 
 	@BuilderMethod
@@ -92,7 +94,102 @@ public class MyNodeBuilder extends NodeBuilder {
 		var node = get(NodeLabels.consequences.toString());
 		node.add(new NarrationSequence("The cashier at the waffle house is not having it and they immediately jump you, Baby Gronk, ManMan, and even womp who was dragged inside, they put a mask on you and your gang and yell at someone to bring out the galaxy gas."));
 	}
+
+	@BuilderMethod
+	public void overrideActions() {
+		var node = get(NodeLabels.override.toString());
+		node.add(new NarrationSequence("You realized that inhaling such copius amounts of galaxy gas has made your brain smooth, and once all of the pent up rot left you brain you realized just how stupid everyones idea was.")).add(new NarrationSequence("With no backup plan you and the group decide to live in the alley for the rest of your lives as bums.")).add(new NarrationSequence("While chilling in the alley on a random night, you suddenly hear footsteps charging towards your group hangout.")).add(new setPosition(Gilbert, alley)).add(new setPosition(player, alley)).add(new setPosition(johnJohn, alley)).add(new setPosition(manMan, alley)).add(new setPosition(babyGronk, alley)).add(new setPosition(womp, alley)).add(new NarrationSequence("You realize a random drunk is furiously charging towards you. He tries to break the bottle of ale he's carrying on his head, but fails as the bottle is too hard. He then knocks himself out."));
+	}
+
+	@BuilderMethod
+	public void messActions() {
+		var node = get(NodeLabels.mess.toString());
+		node.add(new NarrationSequence("The group, startled at first, now looks purplexed."), List.of("Investigate the drunk man", "Ignore"));
+	}
+
+	@BuilderMethod
+	public void findActions() {
+		var node = get(NodeLabels.find.toString());
+		node.add(new NarrationSequence("The group sends you over to investigate, but out of no where, the drunken man gets up and swings his bottle of ale at your shins."));
+	}
+
+	@BuilderMethod
+	public void leaveActions() {
+		var node = get(NodeLabels.leave.toString());
+		node.add(new NarrationSequence("The group goes back to minding their own business, soon after, hearing a bottle crack, the druken man appears enraged, and makes a druken dash towards you and your group."));
+	}
+
+	@BuilderMethod
+	public void altercationActions() {
+		var node = get(NodeLabels.altercation.toString());
+		node.add(new NarrationSequence("You and your group immediately pounce on him surrounding him, each of you taking your stances getting ready to jump him, but mid way through your first attack you think you hear something, a plea for help."))
+		.add(new setPosition(player, alley)).add(new setPosition(johnJohn, alley)).add(new setPosition(manMan, alley)).add(new setPosition(babyGronk, alley)).add(new setPosition(womp, alley)).add(new setPosition(gilbert, alley));
+	}
+
+	@BuilderMethod
+	public void hearActions() {
+		var node = get(NodeLabels.hear.toString());
+		node.add(new NarrationSequence("You hold off of your attack and the rest of your group follows the drunken man gets up"));
+	}
 	
+	@BuilderMethod
+	public void jumpActions() {
+		var node = get(NodeLabels.jump.toString());
+		node.add(new NarrationSequence("After dealing with the drunk man with maximum efficiency, one of the members in your party is getting ready to make him bite the curb but you notice something unmistakable..."));
+	}
+
+	@BuilderMethod
+	public void realizationActions() {
+		var node = get(NodeLabels.realization.toString());
+		node.add(new NarrationSequence("You realized its the circle chain that belonged to a former member of the shadow money wizard gang"));
+	}
+
+	@BuilderMethod
+	public void cleanActions() {
+		var node = get(NodeLabels.clean.toString());
+		node.add(new NarrationSequence("After realizing who this random drunk man might be, you clean him up, he then starts explaining himself, he says he needs help to get is get back on the king of this country because he ruined his life"))
+		.add(new DialogSequence(player, gilbert, List.of("How?", "We don't even know if it's truly you.")));
+	}
+
+	@BuilderMethod
+	public void backgroundActions() {
+		var node = get(NodeLabels.background.toString());
+		/*The drunken man confirms his identity by explaining the significance of it, he explains how king crash out,  went to a party but it turned out it was a surpise 20 v 1.  After everyone popped their balloons he vanquished everyone present to the gnawing abyss, after this, in an attempt to win back his pride, he challenged Gilbert(the drunk man) to go dabloon for dabloon with him.*/
+		node.add(new DialogSequence(gilbert, player, List.of("I'm Gilbert, I was attending a party and it turned out to be a surprise 20 v 1. After everyone popped their balloons, King Crash Out XI vanquished everyone present to the gnawing abyss. In an attempt to win back my pride, he challenged me to go dabloon for dabloon with him."))).add(new DialogSequence(player, gilbert, List.of("What happened next?", "Did you win?")));
+	}
+		
+
+	@BuilderMethod
+	public void morebackgroundActions() {
+		var node = get(NodeLabels.moreBackground.toString());
+		node.add(new DialogSequence(gilbert, player, List.of("I cleared King Crash Out XI but I made a fatal mistake of boasting about my win. Not only did the King drain my bank account, he also siphoned away all of my aura.")))
+			.add(new DialogSequence(player, gilbert, List.of("When?", "What you want us to do about that?", "Oh, nah muddy he violated you.", "Damn, that's crazy.", "Say no more.")));
+	}	
+
+	@BuilderMethod
+	public void whenActions() {
+		var node = get(NodeLabels.when.toString());
+		node.add(new DialogSequence(player, gilbert, List.of("Wait when?"))) // Add closing parentheses
+			.add(new DialogSequence(gilbert, player, List.of("Last night."))) // Add closing parentheses
+			.add(new DialogSequence(player, gilbert, List.of("No, when did I ask?"))) // Add closing parentheses
+			.add(new DialogSequence(gilbert, player, List.of("Real"))); // Add closing parentheses
+	}
+
+	@BuilderMethod
+	public void badActions() {
+		var node = get(NodeLabels.bad.toString());
+		node.add(new NarrationSequence("You are forced to live the rest of your life with negative aura"));
+	}
 	
 
-
+	@BuilderMethod
+	public void neutralActions() {
+		var node = get(NodeLabels.neutral.toString());
+		node.add(new NarrationSequence("Gilbert agrees with you and looks down at his foams in shame."));
+	}
+	
+	@BuilderMethod
+	public void goodActions() {
+		var node = get(NodeLabels.good.toString());
+		node.add(new NarrationSequence("Gilbert thanks you for offering your help."));
+	}
