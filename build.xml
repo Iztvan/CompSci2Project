@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="MyClassProject" default="jar" basedir=".">
+
+    <!-- Define properties -->
+    <property name="src.dir" value="src" />
+    <property name="build.dir" value="build" />
+    <property name="jar.name" value="MyCamelotJava.jar" />
+    <property name="libs.dir" location="libs" />
+	<path id="build-classpath">
+	        <fileset dir="${libs.dir}">
+	            <include name="*.jar" />
+	        </fileset>
+	</path>
+	
+    <!-- Clean target -->
+    <target name="clean">
+        <delete dir="${build.dir}" />
+    </target>
+
+    <!-- Compile target -->
+    <target name="compile" depends="clean">
+        <mkdir dir="${build.dir}" />
+        <javac srcdir="${src.dir}" destdir="${build.dir}" classpathref="build-classpath">
+        	 <classpath refid="build-classpath" />
+        </javac>
+    </target>
+
+    <!-- JAR target -->
+    <target name="jar" depends="compile">
+        <mkdir dir="${build.dir}/jar" />
+    	<jar destfile="${build.dir}/jar/${jar.name}" basedir="${build.dir}">
+    		<zipgroupfileset dir="${libs.dir}" includes="**/*.jar" />
+            <manifest>
+                <attribute name="Main-Class" value="myclassproject.main.MainClass" />
+                <attribute name="Build-Path" value="${build-classpath}" />
+            </manifest>
+        </jar>
+    </target>
+
+    <!-- Default target -->
+    <target name="default" depends="jar" />
+
+</project>

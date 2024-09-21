@@ -1,0 +1,9 @@
+module:CamelotJava
+com.actions
+com.actions.utility
+com.communication
+com.entities
+com.enums
+com.playerInput
+com.sequences
+com.storygraph
