@@ -1,0 +1,34 @@
+{
+    "editor.fontFamily": "monospace, ",
+    "files.autoSave": "afterDelay",
+    "editor.cursorBlinking": "phase",
+    "terminal.integrated.cursorStyleInactive": "line",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "workbench.editor.enablePreview": true,
+    "workbench.iconTheme": "file-icons",
+    "explorer.confirmDragAndDrop": false,
+    "editor.wordWrap": "on",
+    "workbench.colorCustomizations": {
+        "terminal.background": "#00000000"
+    },
+    "workbench.settings.applyToAllProfiles": [
+        "workbench.colorCustomizations"
+    ],
+    "vscode_vibrancy.opacity": 0,
+    "vscode_vibrancy.refreshInterval": 10,
+    "liveshare.allowGuestDebugControl": true,
+    "liveshare.allowGuestTaskControl": true,
+    "vscode_vibrancy.theme": "Default Dark",
+    "vscode_vibrancy.enableAutoTheme": true,
+    "animations.Install-Method": "Apc Customize UI++",
+    "apc.imports": [
+        "file://${userHome}/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.3/dist/updateHandler.js"
+    ],
+    "git.enableSmartCommit": true,
+    "git.autofetch": true,
+    "window.titleBarStyle": "custom",
+    "workbench.colorTheme": "Default Dark+",
+    "vscode_vibrancy.preferedDarkTheme": "Default Dark",
+    "vscode_vibrancy.preferedLightTheme": "Catppuccin Mocha",
+    "vscode_vibrancy.type": "auto"
+}
