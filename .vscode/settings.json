@@ -5,7 +5,7 @@
     "terminal.integrated.cursorStyleInactive": "line",
     "editor.multiCursorModifier": "ctrlCmd",
     "workbench.editor.enablePreview": true,
-    "workbench.iconTheme": "file-icons",
+    "workbench.iconTheme": "vs-seti",
     "explorer.confirmDragAndDrop": false,
     "editor.wordWrap": "on",
     "workbench.colorCustomizations": {
@@ -27,8 +27,22 @@
     "git.enableSmartCommit": true,
     "git.autofetch": true,
     "window.titleBarStyle": "custom",
-    "workbench.colorTheme": "Default Dark+",
+    "workbench.colorTheme": "Transparent Color Theme",
     "vscode_vibrancy.preferedDarkTheme": "Default Dark",
-    "vscode_vibrancy.preferedLightTheme": "Catppuccin Mocha",
-    "vscode_vibrancy.type": "auto"
+    "vscode_vibrancy.preferedLightTheme": "Default Dark",
+    "vscode_vibrancy.type": "auto",
+    "apc.electron": {
+    "opacity": 0.4,
+    "transparent": true,
+    "backgroundColor": "#00000000",
+    "vibrancy": "ultra-dark"
+    },
+    "animations.Enabled": true,
+    "animations.CursorAnimation": true,
+    "animations.Command-Palette": "None",
+    "animations.CursorAnimationOptions": {
+    "TrailLength": 10
+    },
+    "animations.Tabs": "Slide",
+    "animations.Active": "Indent",
 }
