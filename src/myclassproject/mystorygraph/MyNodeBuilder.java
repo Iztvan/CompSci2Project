@@ -4,9 +4,9 @@ import static myclassproject.mystorygraph.MyStoryEntities.*;
 
 import java.util.List;
 import com.storygraph.*;
-import com.storygraph.DialogSequence;
+import com.actions;
 import myclassproject.questexample.NodeLabels;
-import myclassproject.mystorygraph.DialogSequence; 
+import com.sequences.*; 
 
 public class MyNodeBuilder extends NodeBuilder {
 	public MyNodeBuilder(List<Node> list) {
