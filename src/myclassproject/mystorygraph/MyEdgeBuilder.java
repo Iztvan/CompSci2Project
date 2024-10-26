@@ -31,8 +31,6 @@ public class MyEdgeBuilder extends NodeBuilder {
 		var nextNode = get(NodeLabels.atCottage.toString());
 		root.add(new Edge(choice, nextNode));
 	}
-	
-	//Istvan
 	@BuilderMethod
 	public void introEdges() {
 		var intro = get(NodeLabels.intro.toString());
