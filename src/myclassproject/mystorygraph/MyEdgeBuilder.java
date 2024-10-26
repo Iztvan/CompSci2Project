@@ -11,6 +11,8 @@ public class MyEdgeBuilder extends NodeBuilder {
 	 * Initializes the list of story graph nodes.
 	 * @param list A list of all story graph nodes.
 	 */
+
+	 
 	public MyEdgeBuilder(List<Node> list) {
 		super(list);
 	}
@@ -21,8 +23,21 @@ public class MyEdgeBuilder extends NodeBuilder {
 	 * The method should add the edges of the node one by one. 
 	 * These methods must have a BuilderMethod annotation.
 	 */
-	@Override
+	//Istvan
+	@BuilderMethod
+	public void rootEdges() {
+		var root = get(NodeLabels.root.toString());
+		var choice = new MenuChoice(MenuChoice.Options.Start);
+		var nextNode = get(NodeLabels.atCottage.toString());
+		root.add(new Edge(choice, nextNode));
+	}
 	
+	//Istvan
+	@BuilderMethod
+	public void introEdges() {
+		var intro = get(NodeLabels.intro.toString());
+		var 
+	}
 	@BuilderMethod
 	public void rootEdges() {
 		//Example:

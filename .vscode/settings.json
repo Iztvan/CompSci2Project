@@ -5,7 +5,7 @@
     "terminal.integrated.cursorStyleInactive": "line",
     "editor.multiCursorModifier": "ctrlCmd",
     "workbench.editor.enablePreview": true,
-    "workbench.iconTheme": "vs-seti",
+    "workbench.iconTheme": "deepdark-material-icons",
     "explorer.confirmDragAndDrop": false,
     "editor.wordWrap": "on",
     "workbench.colorCustomizations": {
@@ -14,7 +14,7 @@
     "workbench.settings.applyToAllProfiles": [
         "workbench.colorCustomizations"
     ],
-    "vscode_vibrancy.opacity": 0,
+    "vscode_vibrancy.opacity": -1,
     "vscode_vibrancy.refreshInterval": 10,
     "liveshare.allowGuestDebugControl": true,
     "liveshare.allowGuestTaskControl": true,
@@ -27,13 +27,13 @@
     "git.enableSmartCommit": true,
     "git.autofetch": true,
     "window.titleBarStyle": "custom",
-    "workbench.colorTheme": "Transparent Color Theme",
+    "workbench.colorTheme": "Frontier Light (rainglow)",
     "vscode_vibrancy.preferedDarkTheme": "Default Dark",
     "vscode_vibrancy.preferedLightTheme": "Default Dark",
     "vscode_vibrancy.type": "auto",
     "apc.electron": {
-    "opacity": 0.4,
-    "transparent": true,
+    "opacity": 0.9,
+    "transparent": false,
     "backgroundColor": "#00000000",
     "vibrancy": "ultra-dark"
     },
