@@ -1,11 +1,12 @@
 package myclassproject.mystorygraph;
 
 import java.util.List;
-
+import static myclassproject.mystorygraph.MyStoryEntities.*;
 import com.storygraph.BuilderMethod;
 import com.storygraph.Node;
 import com.storygraph.NodeBuilder;
 import com.storygraph.Edge;
+
 
 
 public class MyEdgeBuilder extends NodeBuilder {
@@ -34,10 +35,20 @@ public class MyEdgeBuilder extends NodeBuilder {
 		root.add(new Edge(choice, nextNode));
 	}
 	@BuilderMethod
+	public void ideasEdges() {
+		var node = get(MyNodeLabels.ideas.toString());
+		var choice = new PlayerInteraction(ChoiceLabels.babyGronk.toString(), 
+		babyGronk
+	}
+
+
+	@BuilderMethod
 	public void atVillageEdges() {
 		var node = get(MyNodeLabels.atVillage.toString());
-		var choice = new PlayerInteraction(ChoiceLabels.babyGronk.toString());
-		
+		var choice = new PlayerInteraction(ChoiceLabels.babyGronk.toString(), 
+
+	
+	
 	@BuilderMethod
 	public void rootEdges() {
 		//Example:
