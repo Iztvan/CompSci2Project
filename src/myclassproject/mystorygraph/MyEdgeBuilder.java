@@ -5,6 +5,8 @@ import java.util.List;
 import com.storygraph.BuilderMethod;
 import com.storygraph.Node;
 import com.storygraph.NodeBuilder;
+import com.storygraph.Edge;
+
 
 public class MyEdgeBuilder extends NodeBuilder {
 	/**
@@ -28,14 +30,14 @@ public class MyEdgeBuilder extends NodeBuilder {
 	public void rootEdges() {
 		var root = get(NodeLabels.root.toString());
 		var choice = new MenuChoice(MenuChoice.Options.Start);
-		var nextNode = get(NodeLabels.atCottage.toString());
+		var nextNode = get(MyNodeLabels.atVillage.toString());
 		root.add(new Edge(choice, nextNode));
 	}
 	@BuilderMethod
-	public void introEdges() {
-		var intro = get(NodeLabels.intro.toString());
-		var 
-	}
+	public void atVillageEdges() {
+		var node = get(MyNodeLabels.atVillage.toString());
+		var choice = new PlayerInteraction(ChoiceLabels.babyGronk.toString());
+		
 	@BuilderMethod
 	public void rootEdges() {
 		//Example:

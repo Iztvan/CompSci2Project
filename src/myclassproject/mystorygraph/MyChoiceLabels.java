@@ -3,6 +3,6 @@ package myclassproject.mystorygraph;
 //Fill this enum with the labels you chose for the EDGES of your story graph.
 public enum MyChoiceLabels {
 	//Justin
-	Intro, BabyGronk, ManMan, WhyNot, LovelyIdea, NothingGoing, DoIt, RoomTemp, Womp, ContOne, RevUp, NiceOfYou, OhBrother, ContTwo, LongTime, ContThree, EatThese, DrunkMan, LeaveHim, YouDid, AlterCate, JumpHim, HearPlea, PumpFake, ExplainSelf, Realize, CleanHim, How, TrulyYou, WhatNext, DidWin, When, AboutThat, Violated, ThatsCrazy, SayNo, RembAsk
+	Intro, babyGronk, manMan, whyNot, lovelyIdea, nothingGoing, doIt, roomTemp, womp, contOne, revUp, NiceOfYou, OhBrother, contTwo, longTime, contThree, EatThese, DrunkMan, LeaveHim, YouDid, AlterCate, JumpHim, HearPlea, PumpFake, ExplainSelf, Realize, CleanHim, How, TrulyYou, WhatNext, DidUWin, When, AboutThat, Violated, ThatsCrazy, SayNo, RembAsk
 }
 
