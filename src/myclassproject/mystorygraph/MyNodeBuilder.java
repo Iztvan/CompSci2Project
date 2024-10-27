@@ -189,4 +189,4 @@ public class MyNodeBuilder extends NodeBuilder {
 		var node = get(NodeLabels.good.toString());
 		node.add(new NarrationSequence("Gilbert thanks you for offering your help."));
 	}
- 
+}
