@@ -9,12 +9,8 @@ import com.storygraph.Node;
 import com.storygraph.NodeBuilder;
 import com.storygraph.Edge;
 
-<<<<<<< HEAD
-
-=======
 
 
->>>>>>> 87cae353ff4c6f9a74629ed422cf8b56300c8224
 public class MyEdgeBuilder extends NodeBuilder {
 	/**
 	 * Initializes the list of story graph nodes.
@@ -40,14 +36,10 @@ public class MyEdgeBuilder extends NodeBuilder {
 		var nextNode = get(MyNodeLabels.atVillage.toString());
 		root.add(new Edge(choice, nextNode));
 	}
-<<<<<<< HEAD
 
 	//Justin
-=======
 
->>>>>>> 87cae353ff4c6f9a74629ed422cf8b56300c8224
 	@BuilderMethod
-<<<<<<< HEAD
 	public void atVillageEdges() {
 		var node = get(NodeLabels.atVillage.toString());
 		var choice1 = new PlayerInteraction (ChoiceLabels.BabyGronk.toString(), babyGronk, Icons.talk,
@@ -59,23 +51,11 @@ public class MyEdgeBuilder extends NodeBuilder {
 				"ManMan, JohnJohn, suggestions?");
 		var nextNode2 = get(NodeLabels.ideas.toString());
 		node.add(new Edge(choice2, nextNode2));
-=======
-	public void suggestionsEdges() {
-		var node = get(MyNodeLabels.suggestions.toString());
-
-		var choice = new CloseNarrationChoice("No gang is successful if they have no motion. You, as the group leader, make every single decision for the gang and they reply to your every command. You are starving for clout so you consider faking like you actually care about your community and record a video of you guys helping people out or take out your bordem on some innocent person trying to meet ends met You decide to let the group have a say in a decision, for once");
-		var nextNode = get(MyNodeLabels.ideas.toString());
-		node.add(new Edge(choice, nextNode));
->>>>>>> 87cae353ff4c6f9a74629ed422cf8b56300c8224
 	}
-<<<<<<< HEAD
 
 	//Justin
-=======
 
->>>>>>> 87cae353ff4c6f9a74629ed422cf8b56300c8224
 	@BuilderMethod
-<<<<<<< HEAD
 	public void suggestionsEdges() {
 		var node = get(NodeLabels.suggestions.toString());
 		var choice1 = new PlayerInteraction(ChoiceLabels.WhyNot.toString(), johnJohn, Icons.talk,
@@ -112,7 +92,7 @@ public class MyEdgeBuilder extends NodeBuilder {
 		node.add(new Edge(choice, nextNode));
 	}
 
-=======
+	//Istvan
 	public void ideasEdges() {
 		var node = get(MyNodeLabels.ideas.toString());
 
@@ -139,9 +119,9 @@ public class MyEdgeBuilder extends NodeBuilder {
 		var choice4 = new PlayerInteraction(ChoiceLabels.askWomp.toString(), womp, icons.talk, "....");
 		var nextNode4  = get(MyNodeLabels.womp.toString());
 		node.add(new Edge(choice4, nextNode4));
->>>>>>> 87cae353ff4c6f9a74629ed422cf8b56300c8224
 	}
 
+	//Istvan
 	@BuilderMehod 
 	 public void feedEdges() {
 		
@@ -162,6 +142,7 @@ public class MyEdgeBuilder extends NodeBuilder {
 		node.add(new Edge(choice3, nextNode3));
 	 }
 
+	 //Istvan
 	 @BuilderMethod
 	 public void yeahEdges() {
 		var node = get(MyNodeLabels.yeah.toString());
@@ -177,7 +158,7 @@ public class MyEdgeBuilder extends NodeBuilder {
 	 }
 
 
-
+	 //Istvan
 	 @BuilderMethod
 	 public void nothingEdges() {
 		var node = get(MyNodeLabels.nothing.toString());
@@ -191,6 +172,7 @@ public class MyEdgeBuilder extends NodeBuilder {
 	 }
 	 }
 
+	 //Istvan
 	 @BuilderMethod
 	 public void eatEdges()  {
 		var node = get(MyNodeLabels.eat.toString());
@@ -203,8 +185,9 @@ public class MyEdgeBuilder extends NodeBuilder {
 		node.add(new Edge(choice, nextNode));
 	 }
 
+	 //Istvan
 	 @BuilderMethods
-	 public void overrideEdges() {
+	public void overrideEdges() {
 		var node = get(MyNodeLabels.override.toString());
 
 		var choice1 = new CloseNarrationChoice("You realized that inhaling such copius amounts of galaxy gas has made your brain smooth, and once all of the pent up rot left you brain you realized just how stupid everyones idea was.");
