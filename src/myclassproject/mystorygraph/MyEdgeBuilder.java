@@ -59,9 +59,22 @@ public class MyEdgeBuilder extends NodeBuilder {
 		var choice4 = new PlayerInteraction(ChoiceLabels.askWomp.toString(), womp, icons.talk, "....");
 		var nextNode4  = get(MyNodeLabels.womp.toString());
 		node.add(new Edge(choice4, nextNode4));
-		
-
 	}
+
+	@BuilderMehod 
+	 public void feedEdges() {
+		
+		//you go along with manman's idea
+		var node = get(MyNodeLabels.feed.toString());
+		var choice1 = new DialogChoice("ManMan, this is really nice of you.");
+		var nextNode1 = get(MyNodeLabels.yeah.toString());
+		node.add(new Edge(choice1, nextNode1));
+
+		var choice2 = new DialogChoice("Oh brother, I already know where this is going");
+		var nextNode2 = get(MyNodeLabels.override.toString());
+		node.add(new Edge(choice2, nextNode2));
+	 }
+
 
 
 	@BuilderMethod
