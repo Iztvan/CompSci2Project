@@ -38,7 +38,10 @@ public class MyEdgeBuilder extends NodeBuilder {
 	}
 
 	//Justin
+<<<<<<< HEAD
+=======
 
+>>>>>>> 400882c40b290c9887964c174b48fa7f564badaf
 	@BuilderMethod
 	public void atVillageEdges() {
 		var node = get(NodeLabels.atVillage.toString());
@@ -54,7 +57,10 @@ public class MyEdgeBuilder extends NodeBuilder {
 	}
 
 	//Justin
+<<<<<<< HEAD
+=======
 
+>>>>>>> 400882c40b290c9887964c174b48fa7f564badaf
 	@BuilderMethod
 	public void suggestionsEdges() {
 		var node = get(NodeLabels.suggestions.toString());
@@ -95,30 +101,18 @@ public class MyEdgeBuilder extends NodeBuilder {
 	//Istvan
 	public void ideasEdges() {
 		var node = get(MyNodeLabels.ideas.toString());
-
-		var choice1 = new CloseNarrationChoice("You are very desperate for bread so you turn to Baby Gronk who has an idea.");
-		//Baby Gronk' idea
-		var choice1 = new PlayerInteraction(ChoiceLabels.askbabyGronk.toString(), 
-		babyGronk, icons.talk, 
-		"We should go scam some old people who don't know anything about the internet.");
+		var choice1 = new PlayerInteraction(ChoiceLabels.DoIt.toString(), babyGronk, icons.talk, 
+		"Let's do it.");
 		var nextNode1 = get(MyNodeLabels.lick.toString());
 		node.add(new Edge(choice1, nextNode1));
 		
-		//John John's idea
-		var choice2 = new PlayerInteraction(ChoiceLabels.askJohnJohn.toString(), johnJohn, icons.talk, "We could just target bully someone trying to work their food service shift");
-		var nextNode2 = get(MyNodeLabels.bully.toString());
+		var choice2 = new PlayerInteraction(ChoiceLabels.ManMan.toString(), womp, icons.talk, "Room temperature IQ, I swear.");
+		var nextNode2  = get(MyNodeLabels.suggestions.toString());
 		node.add(new Edge(choice2, nextNode2));
-		
-		//ManMan's idea
-		var choice3 = new 
-		var choice3 = new PlayerInteraction(ChoiceLabels.askManMan.toString(), manMan, icons.talk, "We should put this pent up energy towards something positive like feeding the homeless");
-		var nextNode3 = get(MyNodeLabels.feed.toString());
-		node.add(new Edge(choice3, nextNode3));
 
-		//Womp's idea
-		var choice4 = new PlayerInteraction(ChoiceLabels.askWomp.toString(), womp, icons.talk, "....");
-		var nextNode4  = get(MyNodeLabels.womp.toString());
-		node.add(new Edge(choice4, nextNode4));
+		var choice3 = new PlayerInteraction(ChoiceLabels.Womp.toString(), womp, icons.talk, "Womp, any suggestions?");
+		var nextNode3 = get(MyNodeLabels.fall.toString());
+		node.add(new Edge(choice3, nextNode3));
 	}
 
 	//Istvan
