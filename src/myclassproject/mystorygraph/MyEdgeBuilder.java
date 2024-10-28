@@ -34,6 +34,16 @@ public class MyEdgeBuilder extends NodeBuilder {
 		var nextNode = get(MyNodeLabels.atVillage.toString());
 		root.add(new Edge(choice, nextNode));
 	}
+
+	@BuilderMethod
+	public void suggestionsEdges() {
+		var node = get(MyNodeLabels.suggestions.toString());
+
+		var choice = new CloseNarrationChoice("No gang is successful if they have no motion. You, as the group leader, make every single decision for the gang and they reply to your every command. You are starving for clout so you consider faking like you actually care about your community and record a video of you guys helping people out or take out your bordem on some innocent person trying to meet ends met You decide to let the group have a say in a decision, for once");
+		var nextNode = get(MyNodeLabels.ideas.toString());
+		node.add(new Edge(choice, nextNode));
+	}
+
 	@BuilderMethod
 	public void ideasEdges() {
 		var node = get(MyNodeLabels.ideas.toString());
@@ -52,7 +62,8 @@ public class MyEdgeBuilder extends NodeBuilder {
 		node.add(new Edge(choice2, nextNode2));
 		
 		//ManMan's idea
-		var choice3 = new PlayerInteraction(ChoiceLabels.askManMan.toString(), manMan, icons.talk, "What a lovely idea ManMan.");
+		var choice3 = new 
+		var choice3 = new PlayerInteraction(ChoiceLabels.askManMan.toString(), manMan, icons.talk, "We should put this pent up energy towards something positive like feeding the homeless");
 		var nextNode3 = get(MyNodeLabels.feed.toString());
 		node.add(new Edge(choice3, nextNode3));
 
@@ -141,15 +152,4 @@ public class MyEdgeBuilder extends NodeBuilder {
 	public void atVillageEdges() {
 		var node = get(MyNodeLabels.atVillage.toString());
 		var choice = new PlayerInteraction(ChoiceLabels.babyGronk.toString(), 
-
-	
-	
-	@BuilderMethod
-	public void rootEdges() {
-		//Example:
-		//var root = get(NodeLabels.root.toString());
-		//var choice = new MenuChoice(MenuChoice.Options.Start);
-		//var nextNode = get(NodeLabels.atCottage.toString());
-		//root.add(new Edge(choice, nextNode));
 	}
-}
