@@ -134,7 +134,7 @@ public class MyEdgeBuilder extends NodeBuilder {
 		node.add(new Edge(choice, nextNode));
 	 }
 
-	 @BuilderMethod
+	 @BuilderMethods
 	 public void overrideEdges() {
 		var node = get(MyNodeLabels.override.toString());
 
