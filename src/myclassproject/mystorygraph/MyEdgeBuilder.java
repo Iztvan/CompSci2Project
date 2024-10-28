@@ -43,6 +43,14 @@ public class MyEdgeBuilder extends NodeBuilder {
 
 >>>>>>> 400882c40b290c9887964c174b48fa7f564badaf
 	@BuilderMethod
+<<<<<<< HEAD
+<<<<<<< HEAD
+	public void atVillageEdges() {
+		var node = get(MyNodeLabels.atVillage.toString());
+		var choice = new PlayerInteraction(ChoiceLabels.babyGronk.toString());
+	}
+=======
+=======
 	public void atVillageEdges() {
 		var node = get(NodeLabels.atVillage.toString());
 		var choice1 = new PlayerInteraction (ChoiceLabels.BabyGronk.toString(), babyGronk, Icons.talk,
@@ -62,6 +70,7 @@ public class MyEdgeBuilder extends NodeBuilder {
 
 >>>>>>> 400882c40b290c9887964c174b48fa7f564badaf
 	@BuilderMethod
+>>>>>>> 5b4808f2631474320cc82047a5fc7913c94ba335
 	public void suggestionsEdges() {
 		var node = get(NodeLabels.suggestions.toString());
 		var choice1 = new PlayerInteraction(ChoiceLabels.WhyNot.toString(), johnJohn, Icons.talk,
@@ -194,4 +203,71 @@ public class MyEdgeBuilder extends NodeBuilder {
 		var nextNode3 = get(MyNodeLabels.mess.toString());
 	 }
 
+<<<<<<< HEAD
+>>>>>>> 718182f48d8c547b0b6e29af3ec0ba90d1002499
+	@BuilderMethod
+	public void atVillageEdges() {
+		var node = get(MyNodeLabels.atVillage.toString());
+		var choice = new PlayerInteraction(ChoiceLabels.babyGronk.toString(), 
+=======
+>>>>>>> 5b4808f2631474320cc82047a5fc7913c94ba335
 	}
+	//Orel
+	@BuilderMethod
+	 public void bullyEdges() {
+		var node = get(MyNodeLabels.bully.toString());
+
+		var choice1 = new CloseNarrationChoice("JohnJohn takes you and your group to a waffle house (bad idea) and start trying to cause commotion");
+		var nextNode1 = get(MyNodeLabels.nothing.toString());
+		node.add(new Edge(choice1, nextNode1));
+
+		//you go along with johnjohn's idea
+		var choice2 = new DialogChoice("Rev up those fryers!");
+		var nextNode2 = get(MyNodeLabels.consequences.toString());
+		node.add(new Edge(choice2, nextNode2));
+	 }
+	 @BuilderMehod 
+	 public void messEdges() {
+		
+		//you go along with manman's idea
+		var node = get(MyNodeLabels.mess.toString());
+
+		var choice1 = new CloseNarrationChoice("The group, startled at first, now looks purplexed.");
+		var nextNode1 = get(MyNodeLabels.nothing.toString());
+		node.add(new Edge(choice1, nextNode1));
+
+
+		var choice2 = new DialogChoice("Investigate the drunk man");
+		var nextNode2 = get(MyNodeLabels.find.toString());
+		node.add(new Edge(choice2, nextNode2));
+
+		var choice3 = new DialogChoice("ignore");
+		var nextNode3 = get(MyNodeLabels.leave.toString());
+		node.add(new Edge(choice3, nextNode3));
+	 }
+	 @BuilderMethod
+	 public void hearEdges() {
+		var node = get(MyNodeLabels.hear.toString());
+
+		var choice1 = new CloseNarrationChoice("You hold off of your attack and the rest of your group follows the drunken man gets up");
+		var nextNode1 = get(MyNodeLabels.jump.toString());
+		node.add(new Edge(choice1, nextNode1));
+	 }
+	 @BuilderMethod
+	 public void jumpEdges() {
+		var node = get(MyNodeLabels.jump.toString());
+
+		var choice1 = new CloseNarrationChoice("After dealing with the drunk man with maximum efficiency, one of the members in your party is getting ready to make him bite the curb but you notice something unmistakable...");
+		var nextNode1 = get(MyNodeLabels.realization.toString());
+		node.add(new Edge(choice1, nextNode1));
+	 }
+	 @BuilderMethod
+	 public void relizationEdges() {
+		var node = get(MyNodeLabels.realization.toString());
+
+		var choice1 = new CloseNarrationChoice("You realized its the circle chain that belonged to a former member of the shadow money wizard gang");
+		var nextNode1 = get(MyNodeLabels.clean.toString());
+		node.add(new Edge(choice1, nextNode1));
+	 }
+		
+	
