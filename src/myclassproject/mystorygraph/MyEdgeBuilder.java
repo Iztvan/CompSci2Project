@@ -37,8 +37,30 @@ public class MyEdgeBuilder extends NodeBuilder {
 	@BuilderMethod
 	public void ideasEdges() {
 		var node = get(MyNodeLabels.ideas.toString());
-		var choice = new PlayerInteraction(ChoiceLabels.babyGronk.toString(), 
-		babyGronk
+
+		//Baby Gronk' idea
+		var choice1 = new PlayerInteraction(ChoiceLabels.askbabyGronk.toString(), 
+		babyGronk, icons.talk, 
+		"We should go scam some old people who don't know anything about the internet.");
+		var nextNode1 = get(MyNodeLabels.lick.toString());
+		node.add(new Edge(choice1, nextNode1));
+		
+		//John John's idea
+		var choice2 = new PlayerInteraction(ChoiceLabels.askJohnJohn.toString(), johnJohn, icons.talk, "We could just target bully someone trying to work their food service shift");
+		var nextNode2 = get(MyNodeLabels.bully.toString());
+		node.add(new Edge(choice2, nextNode2));
+		
+		//ManMan's idea
+		var choice3 = new PlayerInteraction(ChoiceLabels.askManMan.toString(), manMan, icons.talk, "What a lovely idea ManMan.");
+		var nextNode3 = get(MyNodeLabels.feed.toString());
+		node.add(new Edge(choice3, nextNode3));
+
+		//Womp's idea
+		var choice4 = new PlayerInteraction(ChoiceLabels.askWomp.toString(), womp, icons.talk, "....");
+		var nextNode4  = get(MyNodeLabels.womp.toString());
+		node.add(new Edge(choice4, nextNode4));
+		
+
 	}
 
 

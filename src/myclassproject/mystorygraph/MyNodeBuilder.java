@@ -190,3 +190,9 @@ public class MyNodeBuilder extends NodeBuilder {
 		node.add(new NarrationSequence("Gilbert thanks you for offering your help."));
 	}
 }
+
+@BuilderMethod 
+public void fallActions() {
+	var node = get(NodeLabels.fall.toString());
+	node.add(new NarrationSequence(
+}
