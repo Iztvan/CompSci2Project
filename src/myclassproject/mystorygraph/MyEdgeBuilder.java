@@ -1,14 +1,20 @@
 package myclassproject.mystorygraph;
 
+import static myclassproject,mystorygraph.MyStoryEntities.*;
+
 import java.util.List;
-import static myclassproject.mystorygraph.MyStoryEntities.*;
+import.com.playerInput.PlayerInteraction.Icons;
 import com.storygraph.BuilderMethod;
 import com.storygraph.Node;
 import com.storygraph.NodeBuilder;
 import com.storygraph.Edge;
 
+<<<<<<< HEAD
+
+=======
 
 
+>>>>>>> 87cae353ff4c6f9a74629ed422cf8b56300c8224
 public class MyEdgeBuilder extends NodeBuilder {
 	/**
 	 * Initializes the list of story graph nodes.
@@ -34,17 +40,79 @@ public class MyEdgeBuilder extends NodeBuilder {
 		var nextNode = get(MyNodeLabels.atVillage.toString());
 		root.add(new Edge(choice, nextNode));
 	}
+<<<<<<< HEAD
 
+	//Justin
+=======
+
+>>>>>>> 87cae353ff4c6f9a74629ed422cf8b56300c8224
 	@BuilderMethod
+<<<<<<< HEAD
+	public void atVillageEdges() {
+		var node = get(NodeLabels.atVillage.toString());
+		var choice1 = new PlayerInteraction (ChoiceLabels.BabyGronk.toString(), babyGronk, Icons.talk,
+				"Baby Gronk, Womp any ideas?");
+		var nextNode1 = get(NodeLabels.ideas.toString());
+		node.add(new Edge(choice1, nextNode1));
+
+		var choice2 = new PlayerInteraction (ChoiceLabels.ManMan.toString(), manMan, Icons.talk,
+				"ManMan, JohnJohn, suggestions?");
+		var nextNode2 = get(NodeLabels.ideas.toString());
+		node.add(new Edge(choice2, nextNode2));
+=======
 	public void suggestionsEdges() {
 		var node = get(MyNodeLabels.suggestions.toString());
 
 		var choice = new CloseNarrationChoice("No gang is successful if they have no motion. You, as the group leader, make every single decision for the gang and they reply to your every command. You are starving for clout so you consider faking like you actually care about your community and record a video of you guys helping people out or take out your bordem on some innocent person trying to meet ends met You decide to let the group have a say in a decision, for once");
 		var nextNode = get(MyNodeLabels.ideas.toString());
 		node.add(new Edge(choice, nextNode));
+>>>>>>> 87cae353ff4c6f9a74629ed422cf8b56300c8224
+	}
+<<<<<<< HEAD
+
+	//Justin
+=======
+
+>>>>>>> 87cae353ff4c6f9a74629ed422cf8b56300c8224
+	@BuilderMethod
+<<<<<<< HEAD
+	public void suggestionsEdges() {
+		var node = get(NodeLabels.suggestions.toString());
+		var choice1 = new PlayerInteraction(ChoiceLabels.WhyNot.toString(), johnJohn, Icons.talk,
+				"I don't see why not.");
+		var nextNode1 = get(NodeLabels.bully.toString());
+		node.add(new Edge(choice1, nextNode1));
+
+		var choice2 = new PlayerInteraction(ChoiceLabels.WhyNot.toString(), manMan, Icons.talk,
+				"What a lovely idea ManMan.");
+		var nextNode2 = get(NodeLabels.feed.toString());
+		node.add(new Edge(choice2, nextNode2));
+
+		var choice3 = new PlayerInteraction(ChoiceLabels.NothingGoing.toString(), johnJohn, Icons.talk,
+				"There's nothing going on in those heads of yours.");
+		var nextNode3 = get(NodeLabels.ideas.toString());
+		node.add(new Edge(choice3, nextNode3));
 	}
 
+	//Justin
 	@BuilderMethod
+	public void fallEdges() {
+		var node = get(NodeLabels.fall.toString());
+		var choice = new MenuChoice(MenuChoice.Options.Resume);
+		var nextNode = get(NodeLabels.atVillage.toString());
+		node.add(new Edge(choice, nextNode));
+	}
+
+	//Justin
+	@BuilderMethod
+	public void lickEdges() {
+		var node = get(NodeLabels.lick.toString());
+		var choice = new PlayerInteraction(ChoiceLabels.ContOne.toString(), galaxyGas, Icons.drink, "Continue");
+		var nextNode = get(NodeLabels.override.toString());
+		node.add(new Edge(choice, nextNode));
+	}
+
+=======
 	public void ideasEdges() {
 		var node = get(MyNodeLabels.ideas.toString());
 
@@ -71,6 +139,7 @@ public class MyEdgeBuilder extends NodeBuilder {
 		var choice4 = new PlayerInteraction(ChoiceLabels.askWomp.toString(), womp, icons.talk, "....");
 		var nextNode4  = get(MyNodeLabels.womp.toString());
 		node.add(new Edge(choice4, nextNode4));
+>>>>>>> 87cae353ff4c6f9a74629ed422cf8b56300c8224
 	}
 
 	@BuilderMehod 
@@ -148,8 +217,4 @@ public class MyEdgeBuilder extends NodeBuilder {
 		var nextNode3 = get(MyNodeLabels.mess.toString());
 	 }
 
-	@BuilderMethod
-	public void atVillageEdges() {
-		var node = get(MyNodeLabels.atVillage.toString());
-		var choice = new PlayerInteraction(ChoiceLabels.babyGronk.toString(), 
 	}
