@@ -28,6 +28,7 @@ public class MyEdgeBuilder extends NodeBuilder {
 	 * The method should add the edges of the node one by one. 
 	 * These methods must have a BuilderMethod annotation.
 	 */
+
 	//Istvan
 	@BuilderMethod
 	public void rootEdges() {
@@ -39,14 +40,6 @@ public class MyEdgeBuilder extends NodeBuilder {
 
 	//Justin
 	@BuilderMethod
-<<<<<<< HEAD
-<<<<<<< HEAD
-	public void atVillageEdges() {
-		var node = get(MyNodeLabels.atVillage.toString());
-		var choice = new PlayerInteraction(ChoiceLabels.babyGronk.toString());
-	}
-=======
-=======
 	public void atVillageEdges() {
 		var node = get(NodeLabels.atVillage.toString());
 		var choice1 = new PlayerInteraction (ChoiceLabels.BabyGronk.toString(), babyGronk, Icons.talk,
@@ -62,7 +55,6 @@ public class MyEdgeBuilder extends NodeBuilder {
 
 	//Justin
 	@BuilderMethod
->>>>>>> 5b4808f2631474320cc82047a5fc7913c94ba335
 	public void suggestionsEdges() {
 		var node = get(NodeLabels.suggestions.toString());
 		var choice1 = new PlayerInteraction(ChoiceLabels.WhyNot.toString(), johnJohn, Icons.talk,
@@ -139,7 +131,7 @@ public class MyEdgeBuilder extends NodeBuilder {
 		node.add(new Edge(choice2, nextNode2));
 	 }
 
-	 //Orel
+	//Orel
 	 @BuilderMethod
 	 public void consequencesEdges() {
 		var node = get(NodeLabels.consequences.toString());
@@ -152,58 +144,20 @@ public class MyEdgeBuilder extends NodeBuilder {
 	 @BuilderMethods
 	public void overrideEdges() {
 		var node = get(MyNodeLabels.override.toString());
-		var choice = new PlayerInteraction(ChoiceLabels.ContThree.toString(), galaxyGas, icons.drink, "Continue");
+		var choice = new CloseNarrationChoice("You override the decision of the group and decide to go with your own plan.");
+		var nextNode = get(MyNodeLabels.mess.toString());
+		node.add(new Edge(choice, nextNode));
 	 }
 
-<<<<<<< HEAD
 	//Justin
-=======
-
-	 //Istvan
-	 @BuilderMethod
-	 public void cleanEdges()  {
-		var node = get(MyNodeLabels.clean.toString());
-
-
-
->>>>>>> bacc849b3e927ad3dc5e07e71886214795ce72ed
 	@BuilderMethod
-<<<<<<< HEAD
 	public void messEdges() {
 		var node = get(NodeLabels.mess.toString());
 		var choice1 = new PlayerInteraction(ChoiceLabels.DrunkMan.toString(), drunkMan, Icons.research, "Investigating drunk man.");
 		var nextNode1 = get(NodeLabels.leave.toString());
-=======
-	public void atVillageEdges() {
-		var node = get(MyNodeLabels.atVillage.toString());
-		var choice = new PlayerInteraction(ChoiceLabels.babyGronk.toString(), 
-
-	}
-	//Orel
-	@BuilderMethod
-	 public void bullyEdges() {
-		var node = get(MyNodeLabels.bully.toString());
-
-
-
-		var choice1 =  new PlayerInteraction(ChoiceLabels.How.toString(), Gilbert, icons.talk "How did this happen to you?");
-		var nextNode1 = get(MyNodeLabels.background.toString());
 		node.add(new Edge(choice1, nextNode1));
 
-		var choice2 = new PlayerInteraction(ChoiceLabels.TrulyYou.toString(), Gilbert, icons.talk "Is this truly you?");
-		var nextNode2 = get(MyNodeLabels.background.toString());
-		node.add(new Edge(choice2, nextNode2));
-	 }
-
-}
-
-=======
-		var choice1 = new CloseNarrationChoice("JohnJohn takes you and your group to a waffle house (bad idea) and start trying to cause commotion");
-		var nextNode1 = get(MyNodeLabels.nothing.toString());
->>>>>>> bacc849b3e927ad3dc5e07e71886214795ce72ed
-		node.add(new Edge(choice1, nextNode1));
-
-		var choice2 = new CloseNarrationChoice();
+		var choice2 = new CloseNarrationChoice("You leave the drunk man alone.");
 		var nextNode2 = get(NodeLabels.find.toString());
 		node.add(new Edge(choice2, nextNode2));
 	}
@@ -235,12 +189,42 @@ public class MyEdgeBuilder extends NodeBuilder {
 		node.add(new Edge(choice, nextNode));
 	 }
 
+	//Justin
+	@BuilderMethod
+	public void leaveEdges() {
+		var node = get(NodeLabels.leave.toString());
+		var choice = new CloseNarrationChoice,("The drunk man charges at you.");
+		var nextNode = get(NodeLabels.altercation.toString());
+		node.add(new Edge(choice, nextNode));
+	}
+
+	//Justin
+	@BuilderMethod
+	public void findEdges() {
+		var node = get(NodeLabels.find.toString());
+		var choice = new CloseNarrationChoice("The drunk man attacks you.");
+		var nextNode = get(NodeLabels.altercation.toString());
+		node.add(new Edge(choice, nextNode));
+	}
+
+	//Justin
+	@BuilderMethod
+	public void altercationEdges() {
+		var node = get(NodeLabels.altercation.toString());
+		var choice1 = new DialogChoice("Let's hear him out,");
+		var nextNode1 = get(NodeLabels.hear.toString());
+		node.add(new Edge(choice1, nextNode1));
+
+		var choice2 = new DialogChoice("We gotta fight back.");
+		var nextNode2 = get(NodeLabels.jump.toString());
+		node.add(new Edge(choice2, nextNode2));
+	}
+
 	//Orel
 	 @BuilderMethod
 	 public void hearEdges() {
 		var node = get(MyNodeLabels.hear.toString());
-
-		var choice1 = new CloseNarrationChoice("You hold off of your attack and the rest of your group follows the drunken man gets up");
+		var choice1 = new CloseNarrationChoice("You explain yourself to the drunk man.");
 		var nextNode1 = get(MyNodeLabels.jump.toString());
 		node.add(new Edge(choice1, nextNode1));
 	 }
@@ -260,10 +244,14 @@ public class MyEdgeBuilder extends NodeBuilder {
 		var nextNode1 = get(MyNodeLabels.clean.toString());
 		node.add(new Edge(choice1, nextNode1));
 	 }
-<<<<<<< HEAD
-=======
-		
-	
 
+	@BuilderMethod
+	public void cleanEdges() {
+		var choice1 =  new PlayerInteraction(ChoiceLabels.How.toString(), Gilbert, icons.talk "How did this happen to you?");
+		var nextNode1 = get(MyNodeLabels.background.toString());
+		node.add(new Edge(choice1, nextNode1));
 
->>>>>>> bacc849b3e927ad3dc5e07e71886214795ce72ed
+		var choice2 = new PlayerInteraction(ChoiceLabels.TrulyYou.toString(), Gilbert, icons.talk "Is this truly you?");
+		var nextNode2 = get(MyNodeLabels.background.toString());
+		node.add(new Edge(choice2, nextNode2));
+	 }
