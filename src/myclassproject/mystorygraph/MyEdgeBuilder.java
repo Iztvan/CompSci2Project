@@ -1,9 +1,9 @@
 package myclassproject.mystorygraph;
 
-import static myclassproject,mystorygraph.MyStoryEntities.*;
+import static myclassproject.mystorygraph.MyStoryEntities.*;
 
 import java.util.List;
-import.com.playerInput.PlayerInteraction.Icons;
+import com.playerInput.PlayerInteraction.Icons;
 import com.storygraph.BuilderMethod;
 import com.storygraph.Node;
 import com.storygraph.NodeBuilder;
@@ -203,20 +203,39 @@ public class MyEdgeBuilder extends NodeBuilder {
 		var nextNode3 = get(MyNodeLabels.mess.toString());
 	 }
 
-<<<<<<< HEAD
->>>>>>> 718182f48d8c547b0b6e29af3ec0ba90d1002499
+
+	 //Istvan
+	 @BuilderMethod
+	 public void cleanEdges()  {
+		var node = get(MyNodeLabels.clean.toString());
+
+
+
 	@BuilderMethod
 	public void atVillageEdges() {
 		var node = get(MyNodeLabels.atVillage.toString());
 		var choice = new PlayerInteraction(ChoiceLabels.babyGronk.toString(), 
-=======
->>>>>>> 5b4808f2631474320cc82047a5fc7913c94ba335
+
 	}
 	//Orel
 	@BuilderMethod
 	 public void bullyEdges() {
 		var node = get(MyNodeLabels.bully.toString());
 
+
+
+		var choice1 =  new PlayerInteraction(ChoiceLabels.How.toString(), Gilbert, icons.talk "How did this happen to you?");
+		var nextNode1 = get(MyNodeLabels.background.toString());
+		node.add(new Edge(choice1, nextNode1));
+
+		var choice2 = new PlayerInteraction(ChoiceLabels.TrulyYou.toString(), Gilbert, icons.talk "Is this truly you?");
+		var nextNode2 = get(MyNodeLabels.background.toString());
+		node.add(new Edge(choice2, nextNode2));
+	 }
+
+}
+
+=======
 		var choice1 = new CloseNarrationChoice("JohnJohn takes you and your group to a waffle house (bad idea) and start trying to cause commotion");
 		var nextNode1 = get(MyNodeLabels.nothing.toString());
 		node.add(new Edge(choice1, nextNode1));
@@ -271,3 +290,4 @@ public class MyEdgeBuilder extends NodeBuilder {
 	 }
 		
 	
+
