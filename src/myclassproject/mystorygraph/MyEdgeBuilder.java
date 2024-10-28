@@ -224,34 +224,91 @@ public class MyEdgeBuilder extends NodeBuilder {
 	 @BuilderMethod
 	 public void hearEdges() {
 		var node = get(MyNodeLabels.hear.toString());
-		var choice1 = new CloseNarrationChoice("You explain yourself to the drunk man.");
-		var nextNode1 = get(MyNodeLabels.jump.toString());
+		var choice1 = new CloseNarrationChoice("You let the drunk man explain himself.");
+		var nextNode1 = get(MyNodeLabels.realization.toString());
 		node.add(new Edge(choice1, nextNode1));
+
+		var choice2 = new CloseNarrationChoice("You realize you aren't trying to hear him out.");
+		var nextNode2 = get(MyNodeLabels.jump.toString());
+		node.add(new Edge(choice2, nextNode2));
 	 }
+
+	 //Orel
 	 @BuilderMethod
 	 public void jumpEdges() {
 		var node = get(MyNodeLabels.jump.toString());
 
-		var choice1 = new CloseNarrationChoice("After dealing with the drunk man with maximum efficiency, one of the members in your party is getting ready to make him bite the curb but you notice something unmistakable...");
-		var nextNode1 = get(MyNodeLabels.realization.toString());
-		node.add(new Edge(choice1, nextNode1));
+		var choice = new PlayerInteraction(ChoiceLabels.Realize.toString(), drunkMan, icons.fist, "You notice something unmistakable.");
+		var nextNode = get(MyNodeLabels.realization.toString());
+		node.add(new Edge(choice, nextNode));
 	 }
+	//Orel 
 	 @BuilderMethod
 	 public void realizationEdges() {
 		var node = get(MyNodeLabels.realization.toString());
 
-		var choice1 = new CloseNarrationChoice("You realized its the circle chain that belonged to a former member of the shadow money wizard gang");
-		var nextNode1 = get(MyNodeLabels.clean.toString());
-		node.add(new Edge(choice1, nextNode1));
+		var choice = new CloseNarrationChoice("You decide to clean him up.");
+		var nextNode = get(MyNodeLabels.clean.toString());
+		node.add(new Edge(choice, nextNode));
 	 }
 
+	//Istvan
 	@BuilderMethod
 	public void cleanEdges() {
-		var choice1 =  new PlayerInteraction(ChoiceLabels.How.toString(), Gilbert, icons.talk "How did this happen to you?");
+		var choice1 =  new DialogChoice("How did this happen to you?");
 		var nextNode1 = get(MyNodeLabels.background.toString());
 		node.add(new Edge(choice1, nextNode1));
 
-		var choice2 = new PlayerInteraction(ChoiceLabels.TrulyYou.toString(), Gilbert, icons.talk "Is this truly you?");
+		var choice2 = new DialogChoice("How do we know this is really you?");
 		var nextNode2 = get(MyNodeLabels.background.toString());
 		node.add(new Edge(choice2, nextNode2));
 	 }
+
+	 //Istvan
+	 @BuilderMethod
+	 public void backgroundEdges() {
+		var node = get(MyNodeLabels.background.toString());
+		var choice1 = new DialogChoice("What next?");
+		var nextNode1 = get(MyNodeLabels.morebackground.toString());
+		node.add(new Edge(choice1, nextNode1));
+
+		var choice2 = new DialogChoice("Did you win?");
+		var nextNode2 = get(MyNodeLabels.morebackground.toString());
+		node.add(new Edge(choice2, nextNode2));
+	 }
+
+	 //Istvan
+	 @BuilderMethod
+	 public void morebackgroundEdges() {
+		var node = get(MyNodeLabels.morebackground.toString());
+		var choice1 = new DialogChoice("When?");
+		var nextNode1 = get(MyNodeLabels.when.toString());
+		node.add(new Edge(choice1, nextNode1));
+
+		var choice2 = new DialogChoice("What you want us to do about that?");
+		var nextNode2 = get(MyNodeLabels.bad.toString());
+		node.add(new Edge(choice2, nextNode2));
+
+		var choice3 = new DialogChoice("Oh nah, he violated you.");
+		var nextNode3 = get(MyNodeLabels.neutral.toString());
+		node.add(new Edge(choice3, nextNode3));
+
+		var choice4 = new DialogChoice("Damn, that's crazy.");
+		var nextNode4 = get(MyNodeLabels.bad.toString());
+		node.add(new Edge(choice4, nextNode4));
+
+		var choice5 = new DialogChoice("Say no more.");
+		var nextNode5 = get(MyNodeLabels.good.toString());
+		node.add(new Edge(choice5, nextNode5));
+	 }
+
+	 //Justin
+	 @BuilderMethod
+	 public void whenEdges() {
+		var node = get(MyNodeLabels.when.toString());
+		var choice = new DialogChoice("When do I remember asking?");
+		var nextNode = get(MyNodeLabels.bad.toString());
+		node.add(new Edge(choice, nextNode));
+	 }
+
+
