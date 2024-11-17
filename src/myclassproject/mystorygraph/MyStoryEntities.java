@@ -19,7 +19,7 @@ public final class MyStoryEntities {
 	public static final Characters johnJohn = new Characters("JohnJohn", BodyTypes.B, Clothing.Bandit, HairStyle.Bald, Colors.Black, 6);
 	public static final Characters womp = new Characters("Womp", BodyTypes.A, Clothing.Witch, HairStyle.Bald, Colors.Red, 6);
 	public static final Characters babyGronk = new Characters("Baby Gronk", BodyTypes.D, Clothing.Naked, HairStyle.Spikey, Colors.Black, 6);
-	public static final Characters Cashier = new Characters("Cashier", BodyTypes.C, Clothing.Peasant, HairStyle.Short, Colors.Black, 6);
+	public static final Characters cashier = new Characters("Cashier", BodyTypes.C, Clothing.Peasant, HairStyle.Short, Colors.Black, 6);
 
 	//Our items
 	public static final Item circleChain = new Item("CircleChain", ItemTypes.MagnifyingGlass);
@@ -28,8 +28,8 @@ public final class MyStoryEntities {
 	public static final Item galaxyGas = new Item("GalaxyGas", ItemTypes.PurplePotion);
 	
 	//Our places
-	public static final Place village = new Place("Village", ItemTypes.City);
-	public static final Place alley = new Place("Alley", ItemTypes.City);
-	public static final Place waffleHouse = new Place("Waffle House", ItemTypes.Tavern);
+	public static final Place village = new Place("Village", PlaceTypes.City);
+	public static final Place alley = new Place("Alley", PlaceTypes.City);
+	public static final Place waffleHouse = new Place("Waffle House", PlaceTypes.Tavern);
 
 }
