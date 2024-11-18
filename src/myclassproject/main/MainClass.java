@@ -1,6 +1,7 @@
 package myclassproject.main;
 
 import com.storygraph.Story;
+import myclassproject.mystorygraph.MyGraph;
 
 import myclassproject.questexample.QuestGraph;
 import myclassproject.testgraph.TestGraph;
@@ -11,7 +12,7 @@ public class MainClass {
 		//Create an object of your story class.
 		var story = new Story();
 		//Simply call run.
-		story.Run(new QuestGraph());
+		story.Run(new MyGraph());
 	}
 
 }
