@@ -36,9 +36,8 @@ public class MyEdgeBuilder extends NodeBuilder {
 		var nextNode = get(MyNodeLabels.atVillage.toString());
 		root.add(new Edge(choice, nextNode));
 	}
-
+	
 	//Justin
-
 	@BuilderMethod
 	public void atVillageEdges() {
 		var node = get(MyNodeLabels.atVillage.toString());
@@ -52,9 +51,8 @@ public class MyEdgeBuilder extends NodeBuilder {
 		var nextNode2 = get(MyNodeLabels.ideas.toString());
 		node.add(new Edge(choice2, nextNode2));
 	}
-
+	
 	//Justin
-
 	@BuilderMethod
 	public void suggestionsEdges() {
 		var node = get(MyNodeLabels.suggestions.toString());
@@ -73,7 +71,7 @@ public class MyEdgeBuilder extends NodeBuilder {
 		var nextNode3 = get(MyNodeLabels.ideas.toString());
 		node.add(new Edge(choice3, nextNode3));
 	}
-
+	
 	//Istvan
 	@BuilderMethod
 	public void ideasEdges() {
@@ -91,7 +89,7 @@ public class MyEdgeBuilder extends NodeBuilder {
 		var nextNode3 = get(MyNodeLabels.fall.toString());
 		node.add(new Edge(choice3, nextNode3));
 	}
-
+	
 	//Justin
 	@BuilderMethod
 	public void fallEdges() {
@@ -100,7 +98,7 @@ public class MyEdgeBuilder extends NodeBuilder {
 		var nextNode = get(MyNodeLabels.atVillage.toString());
 		node.add(new Edge(choice, nextNode));
 	}
-
+	
 	//Justin
 	@BuilderMethod
 	public void lickEdges() {
@@ -109,7 +107,7 @@ public class MyEdgeBuilder extends NodeBuilder {
 		var nextNode = get(MyNodeLabels.override.toString());
 		node.add(new Edge(choice, nextNode));
 	}
-
+	
 	//Orel
 	@BuilderMethod
 	public void bullyEdges() {
@@ -118,12 +116,11 @@ public class MyEdgeBuilder extends NodeBuilder {
 		var nextNode = get(MyNodeLabels.consequences.toString());
 		node.add(new Edge(choice, nextNode));
 	}
-
+	
 	//Istvan
 	@BuilderMethod 
-	public void feedEdges() {
+	 public void feedEdges() {
 		
-		//you go along with manman's idea
 		var node = get(MyNodeLabels.feed.toString());
 		var choice1 = new PlayerInteraction(MyChoiceLabels.NiceOfYou.toString(), manMan, Icons.talk, "ManMan, this is really nice of you.");
 		var nextNode1 = get(MyNodeLabels.yeah.toString());
@@ -132,17 +129,17 @@ public class MyEdgeBuilder extends NodeBuilder {
 		var choice2 = new PlayerInteraction(MyChoiceLabels.OhBrother.toString(), manMan, Icons.talk, "Oh brother, I already know where this is going.");
 		var nextNode2 = get(MyNodeLabels.override.toString());
 		node.add(new Edge(choice2, nextNode2));
-	}
-
+	 }
+	
 	//Orel
 	@BuilderMethod
-	public void consequencesEdges() {
+	 public void consequencesEdges() {
 		var node = get(MyNodeLabels.consequences.toString());
 		var choice = new PlayerInteraction(MyChoiceLabels.ContTwo.toString(), galaxyGas, Icons.drink, "Continue");
 		var nextNode = get(MyNodeLabels.override.toString());
 		node.add(new Edge(choice, nextNode));
-	}
-
+	 }
+	
 	//Istvan
 	@BuilderMethod
 	public void overrideEdges() {
@@ -150,8 +147,8 @@ public class MyEdgeBuilder extends NodeBuilder {
 		var choice = new CloseNarrationChoice();
 		var nextNode = get(MyNodeLabels.mess.toString());
 		node.add(new Edge(choice, nextNode));
-	}
-
+	 }
+	
 	//Justin
 	@BuilderMethod
 	public void messEdges() {
@@ -164,7 +161,7 @@ public class MyEdgeBuilder extends NodeBuilder {
 		var nextNode2 = get(MyNodeLabels.find.toString());
 		node.add(new Edge(choice2, nextNode2));
 	}
-
+	
 	//Istvan
 	@BuilderMethod
 	public void yeahEdges() {
@@ -173,26 +170,25 @@ public class MyEdgeBuilder extends NodeBuilder {
 		var nextNode = get(MyNodeLabels.nothing.toString());
 		node.add(new Edge(choice, nextNode));
 	 }
-
-
-	 //Istvan
-	 @BuilderMethod
-	 public void nothingEdges() {
+	
+	//Istvan
+	@BuilderMethod
+	public void nothingEdges() {
 		var node = get(MyNodeLabels.nothing.toString());
 		var choice = new PlayerInteraction(MyChoiceLabels.EatThese.toString(), manMan, Icons.talk, "Yeah, I don't think ANYONE is going to be able to eat these.");
 		var nextNode = get(MyNodeLabels.eat.toString());
 		node.add(new Edge(choice, nextNode));
-	}
-
-	 //Istvan
-	 @BuilderMethod
-	 public void eatEdges()  {
+	 }
+	
+	//Istvan
+	@BuilderMethod
+	public void eatEdges()  {
 		var node = get(MyNodeLabels.eat.toString());
 		var choice = new PlayerInteraction(MyChoiceLabels.YouDid.toString(), manMan, Icons.talk, "YOU DID, you know what, you're over with.");
 		var nextNode = get(MyNodeLabels.override.toString());
 		node.add(new Edge(choice, nextNode));
-	}
-
+	 }
+	
 	//Justin
 	@BuilderMethod
 	public void leaveEdges() {
@@ -201,7 +197,7 @@ public class MyEdgeBuilder extends NodeBuilder {
 		var nextNode = get(MyNodeLabels.altercation.toString());
 		node.add(new Edge(choice, nextNode));
 	}
-
+	
 	//Justin
 	@BuilderMethod
 	public void findEdges() {
@@ -210,7 +206,7 @@ public class MyEdgeBuilder extends NodeBuilder {
 		var nextNode = get(MyNodeLabels.altercation.toString());
 		node.add(new Edge(choice, nextNode));
 	}
-
+	
 	//Justin
 	@BuilderMethod
 	public void altercationEdges() {
@@ -223,7 +219,7 @@ public class MyEdgeBuilder extends NodeBuilder {
 		var nextNode2 = get(MyNodeLabels.jump.toString());
 		node.add(new Edge(choice2, nextNode2));
 	}
-
+	
 	//Orel
 	@BuilderMethod
 	public void hearEdges() {
@@ -235,9 +231,9 @@ public class MyEdgeBuilder extends NodeBuilder {
 		var choice2 = new CloseNarrationChoice();
 		var nextNode2 = get(MyNodeLabels.jump.toString());
 		node.add(new Edge(choice2, nextNode2));
-	}
-
-	 //Orel
+	 }
+	
+	//Orel
 	@BuilderMethod
 	public void jumpEdges() {
 		var node = get(MyNodeLabels.jump.toString());
@@ -245,9 +241,9 @@ public class MyEdgeBuilder extends NodeBuilder {
 		var choice = new PlayerInteraction(MyChoiceLabels.Realize.toString(), gilbert, Icons.fist, "You notice something unmistakable.");
 		var nextNode = get(MyNodeLabels.realization.toString());
 		node.add(new Edge(choice, nextNode));
-	}
+	 }
 	
-	//Orel 
+	//Orel
 	@BuilderMethod
 	public void realizationEdges() {
 		var node = get(MyNodeLabels.realization.toString());
@@ -255,8 +251,8 @@ public class MyEdgeBuilder extends NodeBuilder {
 		var choice = new CloseNarrationChoice();
 		var nextNode = get(MyNodeLabels.clean.toString());
 		node.add(new Edge(choice, nextNode));
-	}
-
+	 }
+	
 	//Istvan
 	@BuilderMethod
 	public void cleanEdges() {
@@ -268,9 +264,9 @@ public class MyEdgeBuilder extends NodeBuilder {
 		var choice2 = new DialogChoice("How do we know this is really you?");
 		var nextNode2 = get(MyNodeLabels.background.toString());
 		node.add(new Edge(choice2, nextNode2));
-	}
-
-	 //Istvan
+	 }
+	
+	//Istvan
 	@BuilderMethod
 	public void backgroundEdges() {
 		var node = get(MyNodeLabels.background.toString());
@@ -281,9 +277,9 @@ public class MyEdgeBuilder extends NodeBuilder {
 		var choice2 = new DialogChoice("Did you win?");
 		var nextNode2 = get(MyNodeLabels.morebackground.toString());
 		node.add(new Edge(choice2, nextNode2));
-	}
-
-	 //Istvan
+	 }
+	
+	//Istvan
 	@BuilderMethod
 	public void morebackgroundEdges() {
 		var node = get(MyNodeLabels.morebackground.toString());
@@ -306,16 +302,16 @@ public class MyEdgeBuilder extends NodeBuilder {
 		var choice5 = new DialogChoice("Say no more.");
 		var nextNode5 = get(MyNodeLabels.good.toString());
 		node.add(new Edge(choice5, nextNode5));
-	}
-
-	 //Justin
+	 }
+	
+	//Justin
 	@BuilderMethod
 	public void whenEdges() {
 		var node = get(MyNodeLabels.when.toString());
 		var choice = new DialogChoice("When do I remember asking?");
 		var nextNode = get(MyNodeLabels.bad.toString());
 		node.add(new Edge(choice, nextNode));
-	}
+	 }
 }
 
 
