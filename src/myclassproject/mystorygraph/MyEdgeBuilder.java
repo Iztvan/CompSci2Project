@@ -75,20 +75,25 @@ public class MyEdgeBuilder extends NodeBuilder {
 	//Istvan
 	@BuilderMethod
 	public void ideasEdges() {
+		// Get source node
 		var node = get(MyNodeLabels.ideas.toString());
-		var choice1 = new PlayerInteraction(MyChoiceLabels.DoIt.toString(), babyGronk, Icons.talk, 
-		"Let's do it.");
+
+		//option 1
+		var choice1 = new PlayerInteraction(MyChoiceLabels.DoIt.toString(), babyGronk, Icons.talk,  "Let's do it.");
 		var nextNode1 = get(MyNodeLabels.lick.toString());
 		node.add(new Edge(choice1, nextNode1));
-		
-		var choice2 = new PlayerInteraction(MyChoiceLabels.ManMan.toString(), womp, Icons.talk, "Room temperature IQ, I swear.");
-		var nextNode2  = get(MyNodeLabels.suggestions.toString());
+
+		//option 2
+		var choice2 = new PlayerInteraction(MyChoiceLabels.ManMan.toString(),womp,, Icons.talk, "Room temperature IQ, i swear.");
+		var nextNode2 = get(MyNodeLabels.ideas.toString());
 		node.add(new Edge(choice2, nextNode2));
 
-		var choice3 = new PlayerInteraction(MyChoiceLabels.Womp.toString(), womp, Icons.talk, "Womp, any suggestions?");
+		//option 3
+		var choice3 = new PlayerInteraction(MyChoiceLabels.Womp.toString(),womp, Icons.talk, "Womp, any ideas?");
 		var nextNode3 = get(MyNodeLabels.fall.toString());
 		node.add(new Edge(choice3, nextNode3));
 	}
+
 	
 	//Justin
 	@BuilderMethod
@@ -120,14 +125,17 @@ public class MyEdgeBuilder extends NodeBuilder {
 	//Istvan
 	@BuilderMethod 
 	 public void feedEdges() {
-		
+		// Get source node
 		var node = get(MyNodeLabels.feed.toString());
+
+		//option 1 path
 		var choice1 = new PlayerInteraction(MyChoiceLabels.NiceOfYou.toString(), manMan, Icons.talk, "ManMan, this is really nice of you.");
 		var nextNode1 = get(MyNodeLabels.yeah.toString());
 		node.add(new Edge(choice1, nextNode1));
 
-		var choice2 = new PlayerInteraction(MyChoiceLabels.OhBrother.toString(), manMan, Icons.talk, "Oh brother, I already know where this is going.");
-		var nextNode2 = get(MyNodeLabels.override.toString());
+		//option 2 path
+		var choice2 = new PlayerInteraction(MyChoiceLabels.OhBrother.toString(), manMan, Icons.talk, "Oh brother, I already know where this is heading.");
+		var nextNode2 = get(MyNodeLabels.nothing.toString());
 		node.add(new Edge(choice2, nextNode2));
 	 }
 	
