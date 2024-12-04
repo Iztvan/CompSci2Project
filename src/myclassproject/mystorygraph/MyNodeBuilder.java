@@ -56,9 +56,9 @@ public class MyNodeBuilder extends NodeBuilder {
 	@BuilderMethod
 	public void ideasActions() {
 		var node = get(MyNodeLabels.ideas.toString());
-		node.add(new NarrationSequence("You are very desperate for bread so you turn to Baby Gronk who has an idea.")).add(new HideNarration()).add(new Face(player, babyGronk))
+		node.add(new NarrationSequence("You are very desperate for bread so you turn to Baby Gronk who has an idea.")).add(new Wait(3)).add(new HideNarration()).add(new Face(player, babyGronk))
 		.add(new DialogSequence(babyGronk, player, List.of("We should go scam some old people who don't know anything about the internet."), 
-				List.of("Let's do it.", "Room temperature IQ I swear.")));
+				List.of("Let's do it.", "Room temperature IQ I swear."))).add(new HideDialog());
 	}
 	
 	//Izzy
@@ -70,7 +70,7 @@ public class MyNodeBuilder extends NodeBuilder {
 				+ "record a video of you guys helping people out or take out your bordem on some innocent person trying to make ends meet. "
 				+ "You decide to let the group have a say in a decision for once.")).add(new Wait(3)).add(new HideNarration())
 		.add(new DialogSequence(manMan, player, List.of("ManMan says we should put this pent up energy towards something positive like feeding the homeless.", "john-john believes its best if we just target bully someone trying to work their food service shift"), 
-				List.of("What a lovely idea ManMan.", "There's nothing going on in those heads of yours", "I dont see why not" )));
+				List.of("What a lovely idea ManMan.", "There's nothing going on in those heads of yours", "I dont see why not" ))).add(new HideDialog());
 	}
 	
 	//Izzy
@@ -80,6 +80,7 @@ public class MyNodeBuilder extends NodeBuilder {
 		node.add(new NarrationSequence("ManMan takes you and your group to the convenience store and buy as many honey buns as possible "
 				+ "he grabs a few honey buns and puts them into a microwave for some unspecified amount of time"))
 		.add(new DialogSequence(player, manMan, List.of("ManMan this is really nice of you."), List.of("Oh brother I already know where this is going.")));
+	.add(new HideDialog())
 	}
 	
 	//Orel
@@ -197,7 +198,7 @@ public class MyNodeBuilder extends NodeBuilder {
 		var node = get(MyNodeLabels.clean.toString());
 		node.add(new NarrationSequence("After realizing who this random drunk man might be, you clean him up, he then starts explaining himself, "
 				+ "he says he needs help to get is get back on the king of this country because he ruined his life"))
-		.add(new DialogSequence(player, gilbert, List.of("How?"), List.of("We don't even know if it's truly you.")));
+		.add(new DialogSequence(player, gilbert, List.of("How?"), List.of("We don't even know if it's truly you."))).add(new HideDialog());
 	}
 	
 	//Izzy
@@ -215,7 +216,7 @@ public class MyNodeBuilder extends NodeBuilder {
 	//add narration sequence to node
 	node.add(new NarrationSequence("I'm Gilbert, I was attending a party and it turned out to be a surprise 20 v 1. "
 				+ "After everyone popped their balloons, King Crash Out XI vanquished everyone present to the gnawing abyss. "
-				+ "In an attempt to win back my pride, he challenged me to go dabloon for dabloon with him.")).add(new Wait(3).add(new DialogSequence(player, gilbert, List.of("What happened next?"), List.of("Did you win?")));
+				+ "In an attempt to win back my pride, he challenged me to go dabloon for dabloon with him.")).add(new Wait(3)).add(new DialogSequence(player, gilbert, List.of("What happened next?"), List.of("Did you win?"))).add(new HideDialog());
 	}
 
 	//Orel
@@ -224,8 +225,7 @@ public class MyNodeBuilder extends NodeBuilder {
 		var node = get(MyNodeLabels.morebackground.toString());
 		node.add(new NarrationSequence("I cleared King Crash Out XI but I made a fatal mistake of boasting about my win. "
 				+ "Not only did the King drain my bank account, he also siphoned away all of my aura.")).add(new Wait(3)).add(new HideNarration())
-			.add(new DialogSequence(player, gilbert, List.of("When?"), List.of("What you want us to do about that?")))
-			.add(new DialogSequence(player, gilbert, List.of("Oh nah muddy he violated you."), List.of("Damn that's crazy.", "Say no more.")));
+			.add(new DialogSequence(player, gilbert, List.of("When?"), List.of("What you want us to do about that?"))).add(new HideDialog()).add(new DialogSequence(player, gilbert, List.of("Oh nah muddy he violated you."), List.of("Damn that's crazy.", "Say no more."))).add(new HideDialog());
 	}
 	
 	//Izzy
@@ -246,21 +246,23 @@ public class MyNodeBuilder extends NodeBuilder {
 	@BuilderMethod
 	public void badActions() {
 		var node = get(MyNodeLabels.bad.toString());
-		node.add(new NarrationSequence("You are forced to live the rest of your life with negative aura"));
+		node.add(new NarrationSequence("You are forced to live the rest of your life with negative aura"))
+		//player is forced to leave the game
+		.add(new LeaveGame());
 	}
 	
 	//Justin
 	@BuilderMethod
 	public void neutralActions() {
 		var node = get(MyNodeLabels.neutral.toString());
-		node.add(new NarrationSequence("Gilbert agrees with you and looks down at his foams in shame."));
+		node.add(new NarrationSequence("Gilbert agrees with you and looks down at his foams in shame.")).add(new LeaveGame());
 	}
 	
 	//Justin
 	@BuilderMethod
 	public void goodActions() {
 		var node = get(MyNodeLabels.good.toString());
-		node.add(new NarrationSequence("Gilbert thanks you for offering your help."));
+		node.add(new NarrationSequence("Gilbert thanks you for offering your help.")).add(new LeaveGame());
 	}
 	
 	//Justin
@@ -268,6 +270,7 @@ public class MyNodeBuilder extends NodeBuilder {
 	public void fallActions() {
 		var node = get(MyNodeLabels.fall.toString());
 		node.add(new NarrationSequence("Womp says nothing, or though it may seem. In actuality, he sent you back in time to the very beginning of your "
-				+ "story, erasing your memory of the events that transpired."));
+				+ "story, erasing your memory of the events that transpired."))
+				.add(new LeaveGame());
 	}
 }
