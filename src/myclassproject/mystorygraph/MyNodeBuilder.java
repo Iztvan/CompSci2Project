@@ -103,7 +103,7 @@ public class MyNodeBuilder extends NodeBuilder {
 	@BuilderMethod
 	public void eatActions() {
 		var node = get(MyNodeLabels.eat.toString());
-		node.add(new HideDialog()).add(new DialogSequence(player, manMan, List.of("Who said anything about eating"), List.of("YOU DID!!").add(new Draw(player, galaxyGas)).add(new NarrationSequence("You take a hit of your galaxy gas")).add(new Wait(3)).add(new HideNarration());	
+		node.add(new HideDialog()).add(new DialogSequence(player, manMan, List.of("Who said anything about eating"), List.of("YOU DID!!").add(new Draw(player, galaxyGas)).add(new NarrationSequence("You take a hit of your galaxy gas")).add(new Wait(3))))add(new HideNarration());	
 		// .add(new DialogSequence(player, manMan, List.of("Who said anything about eating")
 		// .add(new Draw(player, galaxyGas))
 		// .add(new NarrationSequence("You take a hit of your galaxy gas")).add(new Wait(3)).add(new HideNarration());
