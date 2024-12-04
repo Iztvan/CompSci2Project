@@ -157,17 +157,7 @@ public class MyEdgeBuilder extends NodeBuilder {
 	//Istvan
 	@BuilderMethod 
 	 public void feedEdges() {
-		
 		var node = get(MyNodeLabels.feed.toString());
-//		var choice1 = new DialogChoice("They been in there an awfully long time.");
-//		var nextNode1 = get(MyNodeLabels.yeah.toString());
-//		node.add(new Edge(choice1, nextNode1));
-//
-//		var node = get(MyNodeLabels.eat.toString());
-//		var choice2 = new DialogChoice("I don't think ANYONE is going to be able to eat these.");
-//		var nextNode2 = get(MyNodeLabels.override.toString());
-		
-		//node.add(new Edge(choice3, nextNode3));
 		var choice1 = new DialogChoice("ManMan this is really nice of you.");
 		var nextNode1 = get(MyNodeLabels.yeah.toString());
 		node.add(new Edge(choice1, nextNode1));
