@@ -13,8 +13,6 @@ import com.storygraph.BuilderMethod;
 import com.storygraph.Node;
 import com.storygraph.NodeBuilder;
 import com.storygraph.Edge;
-import com.storygraph.choices.CloseNarrationChoice;
-import com.storygraph.annotations.BuilderMethod;
 
 
 
@@ -69,11 +67,27 @@ public class MyEdgeBuilder extends NodeBuilder {
 	@BuilderMethod
 	public void suggestionsEdges() {
 		var node = get(MyNodeLabels.suggestions.toString());
-		
+//		var choice1 = new PlayerInteraction(MyChoiceLabels.WhyNot.toString(), johnJohn, Icons.talk,
+//				"I don't see why not.");
+//		var nextNode1 = get(MyNodeLabels.bully.toString());
+//		node.add(new Edge(choice1, nextNode1));
+//
+//		var choice2 = new PlayerInteraction(MyChoiceLabels.WhyNot.toString(), manMan, Icons.talk,
+//				"What a lovely idea ManMan.");
+//		var nextNode2 = get(MyNodeLabels.feed.toString());
+//		node.add(new Edge(choice2, nextNode2));
+//
+//		var choice3 = new PlayerInteraction(MyChoiceLabels.NothingGoing.toString(), johnJohn, Icons.talk,
+//				"There's nothing going on in those heads of yours.");
+//		var nextNode3 = get(MyNodeLabels.ideas.toString());
+//		node.add(new Edge(choice3, nextNode3));
+
+		//var node = get(MyNodeLabels.suggestions.toString());
+			
 		var choice1 = new DialogChoice("what a lovely idea Manman."); 
 		var nextNode1 = get(MyNodeLabels.feed.toString()); //feed actions is the line its going to
 		node.add(new Edge(choice1, nextNode1));
-		
+			
 		var choice2 = new DialogChoice("I don't see why not.");
 		var nextNode2 = get(MyNodeLabels.bully.toString());
 		node.add(new Edge(choice2, nextNode2));
@@ -81,27 +95,6 @@ public class MyEdgeBuilder extends NodeBuilder {
 		var choice3 = new DialogChoice("There's nothing going on in those heads of yours.");
 		var nextNode3 = get(MyNodeLabels.ideas.toString());
 		node.add(new Edge(choice3, nextNode3));
-		// var choice1 = new DialogChoice(MyChoiceLabels.WhyNot.toString(), johnJohn, Icons.talk,
-		// 		"I don't see why not.");
-		// var nextNode1 = get(MyNodeLabels.bully.toString());
-		// node.add(new Edge(choice1, nextNode1));
-
-		// var choice2 = new PlayerInteraction(MyChoiceLabels.LovelyIdea.toString(), manMan, Icons.talk,
-		// 		"What a lovely idea ManMan.");
-		// var nextNode2 = get(MyNodeLabels.feed.toString());
-		// node.add(new Edge(choice2, nextNode2));
-
-		// var choice3 = new PlayerInteraction(MyChoiceLabels.NothingGoing.toString(), johnJohn, Icons.talk,
-		// 	"There's nothing going on in those heads of yours.");
-		// var nextNode3 = get(MyNodeLabels.ideas.toString());
-		// node.add(new Edge(choice3, nextNode3));
-		// var choice1 = new DialogChoice("What a lovely idea ManMan.");
-		// var nextNode1 = get(MyNodeLabels.suggestions.toString());
-		// node.add(new Edge(choice1, nextNode1));
-		
-		// var choice2 = new DialogChoice("What about you JohnJohn?");
-		// var nextNode2 = get(MyNodeLabels.ideas.toString());
-		// node.add(new Edge(choice2, nextNode2));
 
 	}
 	
@@ -138,24 +131,25 @@ public class MyEdgeBuilder extends NodeBuilder {
 	@BuilderMethod
 	public void fallEdges() {
 		var node = get(MyNodeLabels.fall.toString());
-		var choice = new LeaveGame();
+		var choice = new MenuChoice(MenuChoice.Options.Resume);
 		var nextNode = get(MyNodeLabels.atVillage.toString());
-		 node.add(new Edge(choice, nextNode));
+		node.add(new Edge(choice, nextNode));
 	}
 	
 	//Justin
 	@BuilderMethod
 	public void lickEdges() {
 		var node = get(MyNodeLabels.lick.toString());
-		var choice1 = new DialogChoice("Contnue.");
-		var nextNode1 = get(MyNodeLabels.override.toString());
+		var choice = new PlayerInteraction(MyChoiceLabels.ContOne.toString(), galaxyGas, Icons.drink, "Continue");
+		var nextNode = get(MyNodeLabels.override.toString());
+		node.add(new Edge(choice, nextNode));
 	}
 	
 	//Orel
 	@BuilderMethod
 	public void bullyEdges() {
 		var node = get(MyNodeLabels.bully.toString());
-		var choice = new PlayerInteraction(MyChoiceLabels.RevUp.toString(), johnJohn, Icons.talk, "Rev up those fryers cause I'm starving.");
+		var choice = new PlayerInteraction(MyChoiceLabels.RevUp.toString(), johnJohn, Icons.talk, "Rev up those fryers, cause I'm starving.");
 		var nextNode = get(MyNodeLabels.consequences.toString());
 		node.add(new Edge(choice, nextNode));
 	}
@@ -163,29 +157,24 @@ public class MyEdgeBuilder extends NodeBuilder {
 	//Istvan
 	@BuilderMethod 
 	 public void feedEdges() {
-			// Get source node
-			var node = get(MyNodeLabels.feed.toString());
 		
-			// First choice path - Nice response
-			var choice1 = new PlayerInteraction(
-				MyChoiceLabels.NiceOfYou.toString(), 
-				manMan, 
-				Icons.talk, 
-				"ManMan, this is really nice of you."
-			);
-			var nextNode1 = get(MyNodeLabels.yeah.toString());
-			node.add(new Edge(choice1, nextNode1));
+		var node = get(MyNodeLabels.feed.toString());
+//		var choice1 = new DialogChoice("They been in there an awfully long time.");
+//		var nextNode1 = get(MyNodeLabels.yeah.toString());
+//		node.add(new Edge(choice1, nextNode1));
+//
+//		var node = get(MyNodeLabels.eat.toString());
+//		var choice2 = new DialogChoice("I don't think ANYONE is going to be able to eat these.");
+//		var nextNode2 = get(MyNodeLabels.override.toString());
 		
-			// Second choice path - Skeptical response
-			var choice2 = new PlayerInteraction(
-				MyChoiceLabels.OhBrother.toString(), 
-				manMan, 
-				Icons.talk, 
-				"Oh brother, I already know where this is going."
-			);
-			var nextNode2 = get(MyNodeLabels.override.toString());
-			node.add(new Edge(choice2, nextNode2));
-		}
+		//node.add(new Edge(choice3, nextNode3));
+		var choice1 = new DialogChoice("ManMan this is really nice of you.");
+		var nextNode1 = get(MyNodeLabels.yeah.toString());
+		node.add(new Edge(choice1, nextNode1));
+		
+		var choice2 = new DialogChoice("Oh brother I already know where this is going.");
+		var nextNode2  = get(MyNodeLabels.override.toString());
+		node.add(new Edge(choice2, nextNode2));
 	 }
 	
 	//Orel
@@ -232,7 +221,7 @@ public class MyEdgeBuilder extends NodeBuilder {
 	@BuilderMethod
 	public void nothingEdges() {
 		var node = get(MyNodeLabels.nothing.toString());
-		var choice = new PlayerInteraction(MyChoiceLabels.EatThese.toString(), manMan, Icons.talk, "Yeah I don't think ANYONE is going to be able to eat these.");
+		var choice = new PlayerInteraction(MyChoiceLabels.EatThese.toString(), manMan, Icons.talk, "Yeah, I don't think ANYONE is going to be able to eat these.");
 		var nextNode = get(MyNodeLabels.eat.toString());
 		node.add(new Edge(choice, nextNode));
 	 }
@@ -241,7 +230,7 @@ public class MyEdgeBuilder extends NodeBuilder {
 	@BuilderMethod
 	public void eatEdges()  {
 		var node = get(MyNodeLabels.eat.toString());
-		var choice = new PlayerInteraction(MyChoiceLabels.YouDid.toString(), manMan, Icons.talk, "YOU DID you know what you're over with.");
+		var choice = new PlayerInteraction(MyChoiceLabels.YouDid.toString(), manMan, Icons.talk, "YOU DID, you know what, you're over with.");
 		var nextNode = get(MyNodeLabels.override.toString());
 		node.add(new Edge(choice, nextNode));
 	 }
@@ -348,11 +337,11 @@ public class MyEdgeBuilder extends NodeBuilder {
 		var nextNode2 = get(MyNodeLabels.bad.toString());
 		node.add(new Edge(choice2, nextNode2));
 
-		var choice3 = new DialogChoice("Oh nah he violated you.");
+		var choice3 = new DialogChoice("Oh nah, he violated you.");
 		var nextNode3 = get(MyNodeLabels.neutral.toString());
 		node.add(new Edge(choice3, nextNode3));
 
-		var choice4 = new DialogChoice("Damn that's crazy.");
+		var choice4 = new DialogChoice("Damn, that's crazy.");
 		var nextNode4 = get(MyNodeLabels.bad.toString());
 		node.add(new Edge(choice4, nextNode4));
 
