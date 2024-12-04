@@ -188,7 +188,6 @@ public class MyEdgeBuilder extends NodeBuilder {
 	@BuilderMethod
 	public void overrideEdges() {
 		var node = get(MyNodeLabels.override.toString());
-		var node = get(MyNodeLabels.override.toString());
 		var choice = new CloseNarrationChoice();
 		var nextNode = get(MyNodeLabels.mess.toString());
 		node.add(new Edge(choice, nextNode));
