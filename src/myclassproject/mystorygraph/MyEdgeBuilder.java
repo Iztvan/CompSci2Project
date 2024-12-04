@@ -69,27 +69,39 @@ public class MyEdgeBuilder extends NodeBuilder {
 	@BuilderMethod
 	public void suggestionsEdges() {
 		var node = get(MyNodeLabels.suggestions.toString());
-//		var choice1 = new PlayerInteraction(MyChoiceLabels.WhyNot.toString(), johnJohn, Icons.talk,
-//				"I don't see why not.");
-//		var nextNode1 = get(MyNodeLabels.bully.toString());
-//		node.add(new Edge(choice1, nextNode1));
-//
-//		var choice2 = new PlayerInteraction(MyChoiceLabels.WhyNot.toString(), manMan, Icons.talk,
-//				"What a lovely idea ManMan.");
-//		var nextNode2 = get(MyNodeLabels.feed.toString());
-//		node.add(new Edge(choice2, nextNode2));
-//
-//		var choice3 = new PlayerInteraction(MyChoiceLabels.NothingGoing.toString(), johnJohn, Icons.talk,
-//				"There's nothing going on in those heads of yours.");
-//		var nextNode3 = get(MyNodeLabels.ideas.toString());
-//		node.add(new Edge(choice3, nextNode3));
-		var choice1 = new DialogChoice("What a lovely idea ManMan.");
-		var nextNode1 = get(MyNodeLabels.suggestions.toString());
+		
+		var choice1 = new DialogChoice("what a lovely idea Manman."); 
+		var nextNode1 = get(MyNodeLabels.feed.toString()); //feed actions is the line its going to
 		node.add(new Edge(choice1, nextNode1));
 		
-		var choice2 = new DialogChoice("What about you JohnJohn?");
-		var nextNode2 = get(MyNodeLabels.ideas.toString());
+		var choice2 = new DialogChoice("I don't see why not.");
+		var nextNode2 = get(MyNodeLabels.bully.toString());
 		node.add(new Edge(choice2, nextNode2));
+
+		var choice3 = new DialogChoice("There's nothing going on in those heads of yours.");
+		var nextNode3 = get(MyNodeLabels.ideas.toString());
+		node.add(new Edge(choice3, nextNode3));
+		// var choice1 = new DialogChoice(MyChoiceLabels.WhyNot.toString(), johnJohn, Icons.talk,
+		// 		"I don't see why not.");
+		// var nextNode1 = get(MyNodeLabels.bully.toString());
+		// node.add(new Edge(choice1, nextNode1));
+
+		// var choice2 = new PlayerInteraction(MyChoiceLabels.LovelyIdea.toString(), manMan, Icons.talk,
+		// 		"What a lovely idea ManMan.");
+		// var nextNode2 = get(MyNodeLabels.feed.toString());
+		// node.add(new Edge(choice2, nextNode2));
+
+		// var choice3 = new PlayerInteraction(MyChoiceLabels.NothingGoing.toString(), johnJohn, Icons.talk,
+		// 	"There's nothing going on in those heads of yours.");
+		// var nextNode3 = get(MyNodeLabels.ideas.toString());
+		// node.add(new Edge(choice3, nextNode3));
+		// var choice1 = new DialogChoice("What a lovely idea ManMan.");
+		// var nextNode1 = get(MyNodeLabels.suggestions.toString());
+		// node.add(new Edge(choice1, nextNode1));
+		
+		// var choice2 = new DialogChoice("What about you JohnJohn?");
+		// var nextNode2 = get(MyNodeLabels.ideas.toString());
+		// node.add(new Edge(choice2, nextNode2));
 
 	}
 	
