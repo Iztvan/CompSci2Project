@@ -278,6 +278,6 @@ public class MyNodeBuilder extends NodeBuilder {
 	@BuilderMethod
 	public void lickActions() {
 		var node = get(MyNodeLabels.lick.toString());
-		node.add(new NarrationSequence("after comenting a crime you go to the local shop to cash in, only to find out that every thing you stole was from shemu.")).add(new Wait(3)).add(new DialogSequence(player, johnJohn, List.of("I'm sorry"), List.of("Hand me the galaxy gas.")));
+		node.add(new NarrationSequence("after comenting a crime you go to the local shop to cash in, only to find out that every thing you stole was from shemu.")).add(new Wait(3)).add(new DialogSequence(player, johnJohn, List.of("Defeated you take a hit of your galaxy gas"), List.of("override their decision and dont hit the lick")));
 	}
 }

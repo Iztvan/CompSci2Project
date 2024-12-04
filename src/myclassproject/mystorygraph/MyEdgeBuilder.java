@@ -147,9 +147,8 @@ public class MyEdgeBuilder extends NodeBuilder {
 	@BuilderMethod
 	public void lickEdges() {
 		var node = get(MyNodeLabels.lick.toString());
-		var choice = new PlayerInteraction(MyChoiceLabels.ContOne.toString(), galaxyGas, Icons.drink, "Continue");
-		var nextNode = get(MyNodeLabels.override.toString());
-		node.add(new Edge(choice, nextNode));
+		var choice1 = new DialogChoice("Contnue.");
+		var nextNode1 = get(MyNodeLabels.override.toString());
 	}
 	
 	//Orel
