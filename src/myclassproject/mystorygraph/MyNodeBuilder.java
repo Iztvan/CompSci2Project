@@ -84,7 +84,7 @@ public class MyNodeBuilder extends NodeBuilder {
 		var node = get(MyNodeLabels.feed.toString());
 		node.add(new NarrationSequence("ManMan takes you and your group to the convenience store and buy as many honey buns as possible "
 				+ "he grabs a few honey buns and puts them into a microwave for some unspecified amount of time"))
-		.add(new DialogSequence(player, manMan, List.of("ManMan this is really nice of you."), List.of("Oh brother I already know where this is going."))).add(new HideDialog());
+		.add(new DialogSequence(player, manMan, List.of("ManMan this is really nice of you.", "Oh brother I already know where this is going."), List.of("yeak I know right...."))).add(new HideDialog());
 	}
 	
 	//Orel
