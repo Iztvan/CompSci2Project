@@ -50,7 +50,7 @@ public class MyNodeBuilder extends NodeBuilder {
 	@BuilderMethod
 	public void ideasActions() {
 		var node = get(MyNodeLabels.ideas.toString());
-		node.add(new HideDialog).add(new NarrationSequence("You are very desperate for bread so you turn to Baby Gronk who has an idea.")).add(new HideNarration()).add(new Face(player, babyGronk)).add(new Wait(3)).add(new HideNarration()).add(new DialogSequence(babyGronk, player, List.of("We should go scam some old people who don't know anything about the internet."), 
+		node.add(new HideDialog()).add(new NarrationSequence("You are very desperate for bread so you turn to Baby Gronk who has an idea.")).add(new HideNarration()).add(new Face(player, babyGronk)).add(new Wait(3)).add(new HideNarration()).add(new DialogSequence(babyGronk, player, List.of("We should go scam some old people who don't know anything about the internet."), 
 				List.of("Let's do it.", "Room temperature IQ, I swear.")));
 	}
 	
