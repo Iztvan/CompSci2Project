@@ -166,13 +166,13 @@ public class MyEdgeBuilder extends NodeBuilder {
 	 public void feedEdges() {
 		
 		var node = get(MyNodeLabels.feed.toString());
-		var choice1 = new PlayerInteraction(MyChoiceLabels.NiceOfYou.toString(), manMan, Icons.talk, "ManMan this is really nice of you.");
+		var choice1 = new DialogChoice("They been in there an awfully long time.");
 		var nextNode1 = get(MyNodeLabels.yeah.toString());
 		node.add(new Edge(choice1, nextNode1));
 
-		var choice2 = new PlayerInteraction(MyChoiceLabels.OhBrother.toString(), manMan, Icons.talk, "Oh brother I already know where this is going.");
+		var node = get(MyNodeLabels.eat.toString());
+		var choice2 = new DialogChoice("I don't think ANYONE is going to be able to eat these.");
 		var nextNode2 = get(MyNodeLabels.override.toString());
-		node.add(new Edge(choice2, nextNode2));
 	 }
 	
 	//Orel
