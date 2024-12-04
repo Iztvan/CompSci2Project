@@ -85,21 +85,18 @@ public class MyNodeBuilder extends NodeBuilder {
 	@BuilderMethod
 	public void yeahActions() {
 		var node = get(MyNodeLabels.yeah.toString());
-		node.add(new HideDialog())
-		.add(new NarrationSequence("Some time goes by and some rancide smell provades the space, you investigate and see ManMan looking at the microwave with malicious intent. the stack of honeybuns didnt decrease insize yet, after all this time theres" + "still honeybuns in the microwave."))
+		node.add(new HideDialog()).add(new NarrationSequence("Some time goes by and some rancide smell provades the space, you investigate and see ManMan looking at the microwave with malicious intent. the stack of honeybuns didnt decrease insize yet, after all this time theres still honeybuns in the microwave."))
 		.add(new Wait(3)).add(new HideNarration())
-		.add(new DialogSequence(player, manMan, List.of("They been in there an awfully long time"), List.of("Don't you think you should take them out?")));
+		.add(new DialogSequence(player, manMan, List.of("The Microwave grows louder", "Don't you think you should take them out?"), List.of("ManMan, they been in here an awfully long time now.")));
 	}
 	
 	//Izzy
 	@BuilderMethod
 	public void nothingActions() {
 		var node = get(MyNodeLabels.nothing.toString());
-		node.add(new HideDialog())
-		.add(new NarrationSequence("i just want them to have a warm snack.  you look at manman then back at the microwave, "
-				+ "the honey buns are glowing white hot, and you feel the heat imminating from them."))
+		node.add(new NarrationSequence("the honey buns are glowing white hot, and you feel the heat imminating from them"))
 		.add(new Wait(3)).add(new HideNarration())
-		.add(new DialogSequence(player, manMan, List.of("Yeah, I don't think ANYONE is going to be able to eat these!"), List.of("These look awfully hot.")));
+		.add(new DialogSequence(player, manMan, List.of("I just want them to have a warm snack.  you look at manman then back at the microwave"), List.of("yeah..I dont think ANYONE is going to be able to eat these.")));
 	}
 	
 	//Izzy
