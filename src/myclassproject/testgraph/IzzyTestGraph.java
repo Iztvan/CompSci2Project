@@ -4,7 +4,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import com.storygraph.Graph;
 import com.storygraph.NodeBuilder;
-import myclassproject.questexample.NodeLabels;
+import myclassproject.questexample.MyNodeLabels;
 
 public class IzzyTestGraph extends Graph {
     public IzzyTestGraph() {
@@ -16,12 +16,12 @@ public class IzzyTestGraph extends Graph {
     }
 
     @Override
-    public NodeBuilder getStartNode() {
+    public NodeBuilder getNodeBuilder() {
         return new IzzyTestNodeBuilder(nodes);
 }
 
-@override
-public NodeBuilder getEdgeBuilder() {
-    return new IzzyTestNodeBuilder(nodes);
-}
+    @override
+    public NodeBuilder getEdgeBuilder() {
+        return new IzzyTestEdgeBuilder(nodes);
+    }
 }
