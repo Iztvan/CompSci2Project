@@ -9,7 +9,9 @@
     "explorer.confirmDragAndDrop": false,
     "editor.wordWrap": "on",
     "workbench.colorCustomizations": {
-        "terminal.background": "#00000000"
+        "terminal.background": "#00000000",
+        "minimap.background": "#00000000",
+        "scrollbar.shadow": "#00000000"
     },
     "workbench.settings.applyToAllProfiles": [
         "workbench.colorCustomizations"
