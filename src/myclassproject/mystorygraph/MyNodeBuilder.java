@@ -116,15 +116,11 @@ public class MyNodeBuilder extends NodeBuilder {
 	//Izzy
 	@BuilderMethod
 	public void overrideActions() {
+		
 		var node = get(MyNodeLabels.override.toString());
 		node.add(new NarrationSequence("You realized that inhaling such copius amounts of galaxy gas has made your brain smooth, "
-				+ "and once all of the pent up rot left you brain you realized just how stupid everyones idea was."))
-		.add(new NarrationSequence("With no backup plan you and the group decide to live in the alley for the rest of your lives as bums."))
-		.add(new NarrationSequence("While chilling in the alley on a random night, you suddenly hear footsteps charging towards your group hangout."))
-		.add(new SetPosition(gilbert, alley)).add(new SetPosition(player, alley)).add(new SetPosition(johnJohn, alley)).add(new SetPosition(manMan, alley))
-		.add(new SetPosition(babyGronk, alley)).add(new SetPosition(womp, alley))
-		.add(new NarrationSequence("You realize a random drunk is furiously charging towards you. He tries to break the bottle of ale he's carrying "
-				+ "on his head, but fails as the bottle is too hard. He then knocks himself out."));
+		 		+ "and once all of the pent up rot left you brain you realized just how stupid everyones idea was.")).add(new NarrationSequence("With no backup plan you and the group decide to live in the alley for the rest of your lives as bums.")).add(new HideNarration()).add(new Wait(3)).add(new NarrationSequence("While chilling in the alley on a random night, you suddenly hear footsteps charging towards your group hangout.")).add(new SetPosition(gilbert, alley)).add(new SetPosition(player, alley)).add(new SetPosition(johnJohn, alley)).add(new SetPosition(manMan, alley)).add(new SetPosition(babyGronk, alley)).add(new SetPosition(womp, alley)).add(new NarrationSequence("You realize a random drunk is furiously charging towards you. He tries to break the bottle of ale he's carrying "
+ 		+ "on his head, but fails as the bottle is too hard. He then knocks himself out."));
 	}
 	
 	//Justin

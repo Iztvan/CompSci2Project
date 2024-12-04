@@ -13,6 +13,8 @@ import com.storygraph.BuilderMethod;
 import com.storygraph.Node;
 import com.storygraph.NodeBuilder;
 import com.storygraph.Edge;
+import com.storygraph.choices.CloseNarrationChoice;
+import com.storygraph.annotations.BuilderMethod;
 
 
 
@@ -169,6 +171,7 @@ public class MyEdgeBuilder extends NodeBuilder {
 	//Istvan
 	@BuilderMethod
 	public void overrideEdges() {
+		var node = get(MyNodeLabels.override.toString());
 		var node = get(MyNodeLabels.override.toString());
 		var choice = new CloseNarrationChoice();
 		var nextNode = get(MyNodeLabels.mess.toString());
