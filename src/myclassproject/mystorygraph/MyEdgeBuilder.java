@@ -138,9 +138,9 @@ public class MyEdgeBuilder extends NodeBuilder {
 	@BuilderMethod
 	public void fallEdges() {
 		var node = get(MyNodeLabels.fall.toString());
-		var choice = new MenuChoice(MenuChoice.Options.Resume);
-		var nextNode = get(MyNodeLabels.atVillage.toString());
-		node.add(new Edge(choice, nextNode));
+		var choice = new LeaveGame();
+		// var nextNode = get(MyNodeLabels.atVillage.toString());
+		// node.add(new Edge(choice, nextNode));
 	}
 	
 	//Justin
