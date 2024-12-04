@@ -250,16 +250,14 @@ public class MyNodeBuilder extends NodeBuilder {
 	@BuilderMethod
 	public void badActions() {
 		var node = get(MyNodeLabels.bad.toString());
-		node.add(new NarrationSequence("You are forced to live the rest of your life with negative aura"))
-		//player is forced to leave the game
-		.add(new LeaveGame());
+		node.add(new NarrationSequence("You are forced to live the rest of your life with negative aura"));
 	}
 	
 	//Justin
 	@BuilderMethod
 	public void neutralActions() {
 		var node = get(MyNodeLabels.neutral.toString());
-		node.add(new NarrationSequence("Gilbert agrees with you and looks down at his foams in shame.")).add(new LeaveGame());
+		node.add(new NarrationSequence("Gilbert agrees with you and looks down at his foams in shame."));
 	}
 	
 	//Justin
@@ -274,6 +272,12 @@ public class MyNodeBuilder extends NodeBuilder {
 	public void fallActions() {
 		var node = get(MyNodeLabels.fall.toString());
 		node.add(new NarrationSequence("Womp says nothing, or though it may seem. In actuality, he sent you back in time to the very beginning of your "
-				+ "story, erasing your memory of the events that transpired.")).add(new CloseNarrationChoice()).add(new LeaveGame());
+				+ "story, erasing your memory of the events that transpired.")).add(new CloseNarrationChoice());
+	}
+
+	@BuilderMethod
+	public void lickActions() {
+		var node = get(MyNodeLabels.lick.toString());
+		node.add(new NarrationSequence("after comenting a crime you go to the local shop to cash in, only to find out that every thing you stole was from shemu. defeated you take a hit of your galaxy gas")).add(new CloseNarrationChoice()).add(new Draw(player, galaxyGas));
 	}
 }

@@ -139,8 +139,8 @@ public class MyEdgeBuilder extends NodeBuilder {
 	public void fallEdges() {
 		var node = get(MyNodeLabels.fall.toString());
 		var choice = new LeaveGame();
-		// var nextNode = get(MyNodeLabels.atVillage.toString());
-		// node.add(new Edge(choice, nextNode));
+		var nextNode = get(MyNodeLabels.atVillage.toString());
+		 node.add(new Edge(choice, nextNode));
 	}
 	
 	//Justin
