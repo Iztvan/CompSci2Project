@@ -5,6 +5,11 @@ import static myclassproject.mystorygraph.MyStoryEntities.*;
 import java.util.List;
 import com.storygraph.*;
 import com.actions;
+import com.actions.Face;
+import com.actions.HideDialog;
+import com.actions.HideNarration;
+import com.actions.SetPosition;
+
 import myclassproject.questexample.NodeLabels;
 import com.sequences.*; 
 
@@ -79,8 +84,7 @@ public class MyNodeBuilder extends NodeBuilder {
 		var node = get(MyNodeLabels.feed.toString());
 		node.add(new NarrationSequence("ManMan takes you and your group to the convenience store and buy as many honey buns as possible "
 				+ "he grabs a few honey buns and puts them into a microwave for some unspecified amount of time"))
-		.add(new DialogSequence(player, manMan, List.of("ManMan this is really nice of you."), List.of("Oh brother I already know where this is going.")));
-	.add(new HideDialog())
+		.add(new DialogSequence(player, manMan, List.of("ManMan this is really nice of you."), List.of("Oh brother I already know where this is going."))).add(new HideDialog());
 	}
 	
 	//Orel
@@ -231,7 +235,7 @@ public class MyNodeBuilder extends NodeBuilder {
 	//Izzy
 	@BuilderMethod
 	public void whenActions() {
-		var node = get(MyNodeLabes.when.toString());
+		var node = get(MyNodeLabels.when.toString());
 
 		//add dialog sequence to node
 		node.add(new DialogSequence(player, gilber, List.of("Wait when?"), List.of("Last night."))).add(new Wait(2)).add(new DialogSequence(player, gilbert, List.of("No when did I ask?"), List.of("Real.")));
