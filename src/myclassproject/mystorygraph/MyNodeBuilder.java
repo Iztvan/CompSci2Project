@@ -87,7 +87,7 @@ public class MyNodeBuilder extends NodeBuilder {
 		var node = get(MyNodeLabels.yeah.toString());
 		node.add(new HideDialog()).add(new NarrationSequence("Some time goes by and some rancide smell provades the space, you investigate and see ManMan looking at the microwave with malicious intent. the stack of honeybuns didnt decrease insize yet, after all this time theres still honeybuns in the microwave."))
 		.add(new Wait(3)).add(new HideNarration())
-		.add(new DialogSequence(player, manMan, List.of("The Microwave grows louder", "Don't you think you should take them out?"), List.of("ManMan, they been in here an awfully long time now.")));
+		.add(new DialogSequence(player, manMan, List.of("The Microwave grows louder", "Don't you think you should take them out?")));
 	}
 	
 	//Izzy
@@ -96,17 +96,17 @@ public class MyNodeBuilder extends NodeBuilder {
 		var node = get(MyNodeLabels.nothing.toString());
 		node.add(new NarrationSequence("the honey buns are glowing white hot, and you feel the heat imminating from them"))
 		.add(new Wait(3)).add(new HideNarration())
-		.add(new DialogSequence(player, manMan, List.of("I just want them to have a warm snack.  you look at manman then back at the microwave"), List.of("yeah..I dont think ANYONE is going to be able to eat these.")));
+		.add(new DialogSequence(player, manMan, List.of("I just want them to have a warm snack you look at manman then back at the microwave"), List.of("yeah..I dont think ANYONE is going to be able to eat these.")));
 	}
 	
 	//Izzy
 	@BuilderMethod
 	public void eatActions() {
 		var node = get(MyNodeLabels.eat.toString());
-		node.add(new HideDialog())
-		.add(new DialogSequence(player, manMan, List.of("Who said anything about eating"), List.of("Eat?")))
-		.add(new Draw(player, galaxyGas))
-		.add(new NarrationSequence("You take a hit of your galaxy gas")).add(new Wait(3)).add(new HideNarration());
+		node.add(new HideDialog()).add(new DialogSequence(player, manMan, List.of("Who said anything about eating"), List.of("YOU DID!!").add(new Draw(player, galaxyGas)).add(new NarrationSequence("You take a hit of your galaxy gas")).add(new Wait(3)).add(new HideNarration());	
+		// .add(new DialogSequence(player, manMan, List.of("Who said anything about eating")
+		// .add(new Draw(player, galaxyGas))
+		// .add(new NarrationSequence("You take a hit of your galaxy gas")).add(new Wait(3)).add(new HideNarration());
 	}
 	
 	//Orel

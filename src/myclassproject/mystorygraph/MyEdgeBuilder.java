@@ -202,10 +202,12 @@ public class MyEdgeBuilder extends NodeBuilder {
 	@BuilderMethod
 	public void yeahEdges() {
 		var node = get(MyNodeLabels.yeah.toString());
-		var choice = new DialogChoice("They been in there an awfully long time.");
+		var choice = new DialogChoice("they been in there an awfully long time");
 		var nextNode = get(MyNodeLabels.nothing.toString());
 		node.add(new Edge(choice, nextNode));
-	}
+	 }
+
+
 	// @BuilderMethod
 	// public void yeahEdges() {
 	// 	var node = get(MyNodeLabels.yeah.toString());
@@ -218,10 +220,18 @@ public class MyEdgeBuilder extends NodeBuilder {
 	@BuilderMethod
 	public void nothingEdges() {
 		var node = get(MyNodeLabels.nothing.toString());
-		var choice = new PlayerInteraction(MyChoiceLabels.EatThese.toString(), manMan, Icons.talk, "Yeah, I don't think ANYONE is going to be able to eat these.");
+		var choice = new DialogChoice("Yeah, I don't think ANYONE is going to be able to eat these.");
 		var nextNode = get(MyNodeLabels.eat.toString());
 		node.add(new Edge(choice, nextNode));
 	 }
+
+	// @BuilderMethod
+	// public void nothingEdges() {
+	// 	var node = get(MyNodeLabels.nothing.toString());
+	// 	var choice = new PlayerInteraction(MyChoiceLabels.EatThese.toString(), manMan, Icons.talk, "Yeah, I don't think ANYONE is going to be able to eat these.");
+	// 	var nextNode = get(MyNodeLabels.eat.toString());
+	// 	node.add(new Edge(choice, nextNode));
+	//  }
 	
 	//Istvan
 	@BuilderMethod
