@@ -264,7 +264,7 @@ public class MyNodeBuilder extends NodeBuilder {
 	@BuilderMethod
 	public void goodActions() {
 		var node = get(MyNodeLabels.good.toString());
-		node.add(new NarrationSequence("Gilbert thanks you for offering your help.")).add(new LeaveGame());
+		node.add(new NarrationSequence("Gilbert thanks you for offering your help."));
 	}
 	
 	//Justin
