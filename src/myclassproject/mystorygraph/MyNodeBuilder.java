@@ -42,7 +42,7 @@ public class MyNodeBuilder extends NodeBuilder {
 	@BuilderMethod
 	public void ideasActions() {
 		var node = get(MyNodeLabels.ideas.toString());
-		node.add(new NarrationSequence("You are very desperate for bread so you turn to Baby Gronk who has an idea.")).add(new Face(player, babyGronk))
+		node.add(new NarrationSequence("You are very desperate for bread so you turn to Baby Gronk who has an idea.")).add(new HideNarration()).add(new Face(player, babyGronk))
 		.add(new DialogSequence(babyGronk, player, List.of("We should go scam some old people who don't know anything about the internet."), 
 				List.of("Let's do it.", "Room temperature IQ, I swear.")));
 	}
@@ -54,7 +54,7 @@ public class MyNodeBuilder extends NodeBuilder {
 		node.add(new NarrationSequence("No gang is successful if they have no motion. You, as the group leader, make every single decision for the gang and "
 				+ "they reply to your every command. You are starving for clout so you consider faking like you actually care about your community and "
 				+ "record a video of you guys helping people out or take out your bordem on some innocent person trying to make ends meet. "
-				+ "You decide to let the group have a say in a decision, for once."))
+				+ "You decide to let the group have a say in a decision, for once.")).add(new Wait(3)).add(new HideNarration())
 		.add(new DialogSequence(manMan, player, List.of("We should put this pent up energy towards something positive like feeding the homeless."), 
 				List.of("What a lovely idea ManMan.", "What about you JohnJohn?")))
 		.add(new DialogSequence(player, johnJohn, List.of("We just target bully someone trying to work their food service shift."), 
@@ -83,7 +83,7 @@ public class MyNodeBuilder extends NodeBuilder {
 	public void nothingActions() {
 		var node = get(MyNodeLabels.nothing.toString());
 		node.add(new NarrationSequence("i just want them to have a warm snack.  you look at manman then back at the microwave, "
-				+ "the honey buns are glowing white hot, and you feel the heat imminating from them."))
+				+ "the honey buns are glowing white hot, and you feel the heat imminating from them.")).add(new HideNarration()).add(new Face(player, manMan))
 		.add(new DialogSequence(player, manMan, List.of("Yeah, I don't think ANYONE is going to be able to eat these!"), List.of("These look awfully hot.")));
 	}
 	
@@ -195,19 +195,27 @@ public class MyNodeBuilder extends NodeBuilder {
 	//Izzy
 	@BuilderMethod
 	public void backgroundActions() {
-		var node = get(MyNodeLabels.background.toString());
-		node.add(new NarrationSequence("I'm Gilbert, I was attending a party and it turned out to be a surprise 20 v 1. "
+	// 	var node = get(MyNodeLabels.background.toString());
+	// 	node.add(new NarrationSequence("I'm Gilbert, I was attending a party and it turned out to be a surprise 20 v 1. "
+	// 			+ "After everyone popped their balloons, King Crash Out XI vanquished everyone present to the gnawing abyss. "
+	// 			+ "In an attempt to win back my pride, he challenged me to go dabloon for dabloon with him."))
+	// 	.add(new DialogSequence(player, gilbert, List.of("What happened next?"), List.of("Did you win?")));
+	// }
+
+	//get background node
+	var node = get(MyNodeBuilder.background.toString());
+	//add narration sequence to node
+	node.add(new NarrationSequence("I'm Gilbert, I was attending a party and it turned out to be a surprise 20 v 1. "
 				+ "After everyone popped their balloons, King Crash Out XI vanquished everyone present to the gnawing abyss. "
-				+ "In an attempt to win back my pride, he challenged me to go dabloon for dabloon with him."))
-		.add(new DialogSequence(player, gilbert, List.of("What happened next?"), List.of("Did you win?")));
+				+ "In an attempt to win back my pride, he challenged me to go dabloon for dabloon with him.")).add(new Wait(3).add(new DialogSequence(player, gilbert, List.of("What happened next?"), List.of("Did you win?")));
 	}
-	
+
 	//Orel
 	@BuilderMethod
 	public void morebackgroundActions() {
 		var node = get(MyNodeLabels.morebackground.toString());
 		node.add(new NarrationSequence("I cleared King Crash Out XI but I made a fatal mistake of boasting about my win. "
-				+ "Not only did the King drain my bank account, he also siphoned away all of my aura."))
+				+ "Not only did the King drain my bank account, he also siphoned away all of my aura.")).add(new Wait(3)).add(new HideNarration())
 			.add(new DialogSequence(player, gilbert, List.of("When?"), List.of("What you want us to do about that?")))
 			.add(new DialogSequence(player, gilbert, List.of("Oh, nah muddy he violated you."), List.of("Damn, that's crazy.", "Say no more.")));
 	}
