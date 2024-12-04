@@ -274,7 +274,6 @@ public class MyNodeBuilder extends NodeBuilder {
 	public void fallActions() {
 		var node = get(MyNodeLabels.fall.toString());
 		node.add(new NarrationSequence("Womp says nothing, or though it may seem. In actuality, he sent you back in time to the very beginning of your "
-				+ "story, erasing your memory of the events that transpired."))
-				.add(new LeaveGame());
+				+ "story, erasing your memory of the events that transpired.")).add(new CloseNarrationChoice()).add(new LeaveGame());
 	}
 }
