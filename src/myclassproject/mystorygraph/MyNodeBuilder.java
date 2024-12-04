@@ -84,14 +84,14 @@ public class MyNodeBuilder extends NodeBuilder {
 		var node = get(MyNodeLabels.feed.toString());
 		node.add(new NarrationSequence("ManMan takes you and your group to the convenience store and buy as many honey buns as possible "
 				+ "he grabs a few honey buns and puts them into a microwave for some unspecified amount of time"))
-		.add(new DialogSequence(player, manMan, List.of("ManMan this is really nice of you.", "Oh brother I already know where this is going."), List.of("yeak I know right...."))).add(new HideDialog());
+		.add(new DialogSequence(player, manMan, List.of("ManMan this is really nice of you.", ), List.of("yeak I know right....", "Oh brother I already know where this is going.")));
 	}
 	
 	//Orel
 	@BuilderMethod
 	public void yeahActions() {
 		var node = get(MyNodeLabels.yeah.toString());
-		node.add(new NarrationSequence("Some time goes by and some rancide smell provades the space, you investigate and see ManMan looking at the microwave with malicious intent. the stack of honeybuns didnt decrease insize yet after all this time theres still honeybuns in the microwave."))
+		node..add(new HideDialog()).add(new NarrationSequence("Some time goes by and some rancide smell provades the space, you investigate and see ManMan looking at the microwave with malicious intent. the stack of honeybuns didnt decrease insize yet after all this time theres still honeybuns in the microwave."))
 		.add(new DialogSequence(player, manMan, List.of("They been in there an awfully long time"), List.of("Don't you think you should take them out?")));
 	}
 	
