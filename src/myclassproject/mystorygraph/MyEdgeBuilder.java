@@ -122,12 +122,16 @@ public class MyEdgeBuilder extends NodeBuilder {
 //		var nextNode3 = get(MyNodeLabels.fall.toString());
 //		node.add(new Edge(choice3, nextNode3));
 		var choice1 = new DialogChoice("Let's do it.");
-		var nextNode1 = get(MyNodeLabels.suggestions.toString());
+		var nextNode1 = get(MyNodeLabels.lick.toString());
 		node.add(new Edge(choice1, nextNode1));
 		
-		var choice2 = new DialogChoice("Room temperature IQ I swear.");
-		var nextNode2 = get(MyNodeLabels.suggestions.toString());
+		var choice2 = new DialogChoice("Room temperature IQ, I swear.");
+		var nextNode2  = get(MyNodeLabels.suggestions.toString());
 		node.add(new Edge(choice2, nextNode2));
+
+		var choice3 = new DialogChoice("Womp, any suggestions?");
+		var nextNode3 = get(MyNodeLabels.fall.toString());
+		node.add(new Edge(choice3, nextNode3));
 	}
 	
 	//Justin
