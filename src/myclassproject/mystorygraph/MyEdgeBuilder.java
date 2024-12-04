@@ -255,10 +255,18 @@ public class MyEdgeBuilder extends NodeBuilder {
 	@BuilderMethod
 	public void findEdges() {
 		var node = get(MyNodeLabels.find.toString());
-		var choice = new CloseNarrationChoice();
+		var choice = new DialogChoice("Here we go again");
 		var nextNode = get(MyNodeLabels.altercation.toString());
 		node.add(new Edge(choice, nextNode));
 	}
+	
+	// @BuilderMethod
+	// public void findEdges() {
+	// 	var node = get(MyNodeLabels.find.toString());
+	// 	var choice = new CloseNarrationChoice();
+	// 	var nextNode = get(MyNodeLabels.altercation.toString());
+	// 	node.add(new Edge(choice, nextNode));
+	// }
 	
 	//Justin
 	@BuilderMethod

@@ -103,7 +103,7 @@ public class MyNodeBuilder extends NodeBuilder {
 	@BuilderMethod
 	public void eatActions() {
 		var node = get(MyNodeLabels.eat.toString());
-		node.add(new HideDialog()).add(new DialogSequence(player, manMan, List.of("Who said anything about eating"), List.of("YOU DID!!").add(new Draw(player, galaxyGas)).add(new NarrationSequence("You take a hit of your galaxy gas")).add(new Wait(3))))add(new HideNarration());	
+		node.add(new HideDialog()).add(new DialogSequence(player, manMan, List.of("Who said anything about eating"), List.of("YOU DID!!").add(new NarrationSequence("You take a hit of your galaxy gas")).add(new Wait(3)).add(new HideNarration());	
 		// .add(new DialogSequence(player, manMan, List.of("Who said anything about eating")
 		// .add(new Draw(player, galaxyGas))
 		// .add(new NarrationSequence("You take a hit of your galaxy gas")).add(new Wait(3)).add(new HideNarration());
@@ -113,11 +113,16 @@ public class MyNodeBuilder extends NodeBuilder {
 	@BuilderMethod
 	public void bullyActions() {
 		var node = get(MyNodeLabels.bully.toString());
-		node.add(new HideDialog())
-		.add(new NarrationSequence("JohnJohn takes you and your group to a waffle house (bad idea) and start trying to cause commotion"))
-		.add(new Wait(3)).add(new HideNarration())
-		.add(new DialogSequence(player, johnJohn, List.of("Rev up those fryers!"), List.of("I'm starving!")));
+		node.add(new HideDialog()).add(new NarrationSequence("JohnJohn takes you and your group to a waffle house (bad idea) and start trying to cause commotion")).add(new Wait(3)).add(new
 	}
+	// @BuilderMethod
+	// public void bullyActions() {
+	// 	var node = get(MyNodeLabels.bully.toString());
+	// 	node.add(new HideDialog())
+	// 	.add(new NarrationSequence("JohnJohn takes you and your group to a waffle house (bad idea) and start trying to cause commotion"))
+	// 	.add(new Wait(3)).add(new HideNarration())
+	// 	.add(new DialogSequence(player, johnJohn, List.of("Rev up those fryers!"), List.of("I'm starving!")));
+	// }
 	
 	//Justin
 	@BuilderMethod
@@ -151,27 +156,36 @@ public class MyNodeBuilder extends NodeBuilder {
 	public void messActions() {
 		var node = get(MyNodeLabels.mess.toString());
 		node.add(new NarrationSequence("The group, startled at first, now looks purplexed."))
-		.add(new Wait(3)).add(new HideNarration())
-		.add(new DialogSequence(player, gilbert, List.of("Investigate the drunk man"), List.of("Ignore")));
+		.add(new Wait(3)).add(new HideNarration()).add(new DialogSequence(player, gilbert, List.of("Leave him be", "Find out"))
+		// .add(new DialogSequence(player, gilbert, List.of("Investigate the drunk man"), List.of("Ignore")));
 	}
 	
 	//Justin
 	@BuilderMethod
 	public void findActions() {
 		var node = get(MyNodeLabels.find.toString());
-		node.add(new HideDialog())
-		.add(new NarrationSequence("The group sends you over to investigate, but out of no where, "
-				+ "the drunken man gets up and swings his bottle of ale at your shins.")).add(new Wait(3)).add(new HideNarration());
+		node.add(new HideDialog()).add(new NarrationSequence("The group sends you over to investigate, but out of no where, the drunken man gets up and swings his bottle of ale at your shins.").add(new Wait()).add(new HideNarration()).add(new SetPosition(player, alley)).add(new SetPosition(johnJohn, alley)).add(new SetPosition(manMan, alley)).add(new SetPosition(babyGronk, alley)).add(new SetPosition(womp, alley)).add(new SetPosition(gilbert, alley)).add(new DialogSequence("altercation"));
 	}
+	// @BuilderMethod
+	// public void findActions() {
+	// 	var node = get(MyNodeLabels.find.toString());
+	// 	node.add(new HideDialog())
+	// 	.add(new NarrationSequence("The group sends you over to investigate, but out of no where, "
+	// 			+ "the drunken man gets up and swings his bottle of ale at your shins.")).add(new Wait(3)).add(new HideNarration());
+	// }
 	
 	//Justin
 	@BuilderMethod
 	public void leaveActions() {
 		var node = get(MyNodeLabels.leave.toString());
-		node.add(new NarrationSequence("The group goes back to minding their own business, soon after, hearing a bottle crack, "
-				+ "the druken man appears enraged, and makes a druken dash towards you and your group."))
-				.add(new Wait(3)).add(new HideNarration());
-	}
+		node.add(new HideDialog()).add(new NarrationSequence("The group goes back to minding their own business, soon after, hearing a bottle crack, the druken man appears enraged, and makes a druken dash towards you and your group")).add(new Wait(10)).add(new HideNarration()).add(new DialogSequence("altercation"));
+	// @BuilderMethod
+	// public void leaveActions() {
+	// 	var node = get(MyNodeLabels.leave.toString());
+	// 	node.add(new NarrationSequence("The group goes back to minding their own business, soon after, hearing a bottle crack, "
+	// 			+ "the druken man appears enraged, and makes a druken dash towards you and your group."))
+	// 			.add(new Wait(3)).add(new HideNarration());
+	// }
 	
 	//Izzy
 	@BuilderMethod
@@ -211,11 +225,16 @@ public class MyNodeBuilder extends NodeBuilder {
 	@BuilderMethod
 	public void cleanActions() {
 		var node = get(MyNodeLabels.clean.toString());
-		node.add(new NarrationSequence("After realizing who this random drunk man might be, you clean him up, he then starts explaining himself, "
-				+ "he says he needs help to get is get back on the king of this country because he ruined his life"))
-		.add(new Wait(3)).add(new HideNarration())
-		.add(new DialogSequence(player, gilbert, List.of("How?"), List.of("We don't even know if it's truly you.")));
+		node.add(new HideDialog()).
 	}
+	// @BuilderMethod
+	// public void cleanActions() {
+	// 	var node = get(MyNodeLabels.clean.toString());
+	// 	node.add(new NarrationSequence("After realizing who this random drunk man might be, you clean him up, he then starts explaining himself, "
+	// 			+ "he says he needs help to get is get back on the king of this country because he ruined his life"))
+	// 	.add(new Wait(3)).add(new HideNarration())
+	// 	.add(new DialogSequence(player, gilbert, List.of("How?"), List.of("We don't even know if it's truly you.")));
+	// }
 	
 	//Izzy
 	@BuilderMethod
