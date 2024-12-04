@@ -70,7 +70,7 @@ public class MyNodeBuilder extends NodeBuilder {
 				+ "record a video of you guys helping people out or take out your bordem on some innocent person trying to make ends meet. "
 				+ "You decide to let the group have a say in a decision for once.")).add(new Wait(3)).add(new HideNarration())
 		.add(new DialogSequence(manMan, player, List.of("ManMan says we should put this pent up energy towards something positive like feeding the homeless.", "john-john believes its best if we just target bully someone trying to work their food service shift"), 
-				List.of("What a lovely idea ManMan.", "There's nothing going on in those heads of yours", "I dont see why not", )));
+				List.of("What a lovely idea ManMan.", "There's nothing going on in those heads of yours", "I dont see why not" )));
 	}
 	
 	//Izzy
