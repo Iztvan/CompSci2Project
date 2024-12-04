@@ -8,6 +8,20 @@ import com.actions;
 import myclassproject.questexample.NodeLabels;
 import com.sequences.*; 
 
+//example of a node builder class
+// @BuilderMethod
+// public void someNodeActions() {
+//     var node = get(MyNodeLabels.nodeName.toString());
+//     node.add(new HideMenu())
+//         .add(new EnableInput())
+//         .add(new NarrationSequence("Story text"))
+//         .add(new DialogSequence(
+//             speaker1, 
+//             speaker2,
+//             List.of("Dialog option 1", "Dialog option 2"),
+//             List.of("Response 1", "Response 2")
+//         ));
+// }
 public class MyNodeBuilder extends NodeBuilder {
 	public MyNodeBuilder(List<Node> list) {
 		super(list);
