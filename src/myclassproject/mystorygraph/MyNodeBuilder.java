@@ -113,7 +113,7 @@ public class MyNodeBuilder extends NodeBuilder {
 	@BuilderMethod
 	public void bullyActions() {
 		var node = get(MyNodeLabels.bully.toString());
-		node.add(new HideDialog()).add(new NarrationSequence("JohnJohn takes you and your group to a waffle house (bad idea) and start trying to cause commotion")).add(new Wait(3)).add(new
+		node.add(new HideDialog()).add(new NarrationSequence("JohnJohn takes you and your group to a waffle house (bad idea) and start trying to cause commotion")).add(new Wait(3)).add(new HideNarration()).add(new DialogSequence(player, johnJohn, List.of("Rev up those fryers!"), List.of("I'm starving!")));
 	}
 	// @BuilderMethod
 	// public void bullyActions() {
@@ -195,7 +195,7 @@ public class MyNodeBuilder extends NodeBuilder {
 				+ "jump him, but mid way through your first attack you think you hear something, a plea for help."))
 		.add(new Wait(3)).add(new HideNarration())
 		.add(new SetPosition(player, alley)).add(new SetPosition(johnJohn, alley)).add(new SetPosition(manMan, alley))
-		.add(new SetPosition(babyGronk, alley)).add(new SetPosition(womp, alley)).add(new SetPosition(gilbert, alley));
+		.add(new SetPosition(babyGronk, alley)).add(new SetPosition(womp, alley)).add(new SetPosition(gilbert, alley)).add(new DialogSequence("What will you do?"));
 	}
 	
 	//Orel
